@@ -3,8 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 gem 'haml-rails'
-gem 'unicorn'
+gem 'unicorn-rails'
 gem 'simple_form'
+gem 'devise', '~> 3.0.0.rc'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
