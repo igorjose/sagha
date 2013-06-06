@@ -1,0 +1,45 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @orgao.nome
+%p
+  %b Tipo:
+  = @orgao.tipo
+%p
+  %b Vinculo:
+  = @orgao.vinculo
+%p
+  %b Endereco:
+  = @orgao.endereco
+%p
+  %b Bairro:
+  = @orgao.bairro
+%p
+  %b Cep:
+  = @orgao.cep
+%p
+  %b Telefone:
+  = @orgao.telefone
+%p
+  %b Secretario:
+  = @orgao.secretario
+%p
+  %b Email secretario:
+  = @orgao.email_secretario
+%p
+  %b Nome secretaria:
+  = @orgao.nome_secretaria
+%p
+  %b Telefone secretaria:
+  = @orgao.telefone_secretaria
+%p
+  %b Email secretaria:
+  = @orgao.email_secretaria
+%p
+  %b Atribuicoes orgao:
+  = @orgao.atribuicoes_orgao
+
+= link_to 'Edit', edit_orgao_path(@orgao)
+\|
+= link_to 'Back', orgaos_path

@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130606181013) do
+ActiveRecord::Schema.define(version: 20130606200045) do
+
+  create_table "orgaos", force: true do |t|
+    t.string   "nome"
+    t.string   "tipo"
+    t.string   "vinculo"
+    t.string   "endereco"
+    t.string   "bairro"
+    t.integer  "cep"
+    t.string   "telefone"
+    t.string   "secretario"
+    t.string   "email_secretario"
+    t.string   "nome_secretaria"
+    t.string   "telefone_secretaria"
+    t.string   "email_secretaria"
+    t.string   "atribuicoes_orgao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "softwares", force: true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

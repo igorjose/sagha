@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  tipo: MyString
+  vinculo: MyString
+  endereco: MyString
+  bairro: MyString
+  cep: 1
+  telefone: MyString
+  secretario: MyString
+  email_secretario: MyString
+  nome_secretaria: MyString
+  telefone_secretaria: MyString
+  email_secretaria: MyString
+  atribuicoes_orgao: MyString
+
+two:
+  nome: MyString
+  tipo: MyString
+  vinculo: MyString
+  endereco: MyString
+  bairro: MyString
+  cep: 1
+  telefone: MyString
+  secretario: MyString
+  email_secretario: MyString
+  nome_secretaria: MyString
+  telefone_secretaria: MyString
+  email_secretaria: MyString
+  atribuicoes_orgao: MyString

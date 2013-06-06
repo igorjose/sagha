@@ -1,0 +1,1 @@
+json.extract! @orgao, :nome, :tipo, :vinculo, :endereco, :bairro, :cep, :telefone, :secretario, :email_secretario, :nome_secretaria, :telefone_secretaria, :email_secretaria, :atribuicoes_orgao, :created_at, :updated_at
