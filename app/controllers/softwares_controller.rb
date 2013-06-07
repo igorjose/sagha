@@ -28,7 +28,7 @@ class SoftwaresController < ApplicationController
 
     respond_to do |format|
       if @software.save
-        format.html { redirect_to @software, notice: 'Software was successfully created.' }
+        format.html { redirect_to @software, notice: 'Software criado com sucesso!' }
         format.json { render action: 'show', status: :created, location: @software }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class SoftwaresController < ApplicationController
   def update
     respond_to do |format|
       if @software.update(software_params)
-        format.html { redirect_to @software, notice: 'Software was successfully updated.' }
+        format.html { redirect_to @software, notice: 'Software editado com sucesso!' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

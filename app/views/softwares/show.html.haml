@@ -1,9 +1,18 @@
-%p#notice= notice
+.alert.alert-success= notice
 
-%p
-  %b Nome:
-  = @software.nome
+%h1 Visualizar software selecionado
 
-= link_to 'Editar', edit_software_path(@software)
-\|
-= link_to 'Voltar', softwares_path
+%table.table.table-hover
+  %tr
+    %td
+      %b Nome:
+    %td
+      = @software.nome
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_software_path(@software)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', softwares_path

@@ -1,45 +1,78 @@
-%p#notice= notice
+.alert.alert-success= notice
 
-%p
-  %b Nome:
-  = @orgao.nome
-%p
-  %b Tipo:
-  = @orgao.tipo
-%p
-  %b Vinculo:
-  = @orgao.vinculo
-%p
-  %b Endereco:
-  = @orgao.endereco
-%p
-  %b Bairro:
-  = @orgao.bairro
-%p
-  %b Cep:
-  = @orgao.cep
-%p
-  %b Telefone:
-  = @orgao.telefone
-%p
-  %b Secretario:
-  = @orgao.secretario
-%p
-  %b Email secretario:
-  = @orgao.email_secretario
-%p
-  %b Nome secretaria:
-  = @orgao.nome_secretaria
-%p
-  %b Telefone secretaria:
-  = @orgao.telefone_secretaria
-%p
-  %b Email secretaria:
-  = @orgao.email_secretaria
-%p
-  %b Atribuicoes orgao:
-  = @orgao.atribuicoes_orgao
+%h1 Visualizar órgão selecionado
 
-= link_to 'Editar', edit_orgao_path(@orgao)
-\|
-= link_to 'Voltar', orgaos_path
+%table.table.table-hover
+  %tr
+    %td
+      %b Nome:
+    %td
+      = @orgao.nome
+  %tr    
+    %td
+      %b Tipo:
+    %td
+      = @orgao.tipo
+  %tr
+    %td
+      %b Vinculo:
+    %td
+      = @orgao.vinculo
+  %tr
+    %td
+      %b Endereco:
+    %td
+      = @orgao.endereco
+  %tr
+    %td
+      %b Bairro:
+    %td
+      = @orgao.bairro
+  %tr
+    %td
+      %b CEP:
+    %td
+      = @orgao.cep
+  %tr
+    %td
+      %b Telefone:
+    %td
+      = @orgao.telefone
+  %tr
+    %td
+      %b Secretario:
+    %td
+      = @orgao.secretario
+  %tr
+    %td
+      %b Email secretario:
+    %td
+      = @orgao.email_secretario
+  %tr
+    %td
+      %b Nome secretaria:
+    %td
+      = @orgao.nome_secretaria
+  %tr
+    %td
+      %b Telefone secretaria:
+    %td
+      = @orgao.telefone_secretaria
+  %tr
+    %td
+      %b Email secretaria:
+    %td
+      = @orgao.email_secretaria
+  %tr
+    %td
+      %b Atribuicoes orgao:
+    %td
+      = @orgao.atribuicoes_orgao
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_orgao_path(@orgao)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', orgaos_path
