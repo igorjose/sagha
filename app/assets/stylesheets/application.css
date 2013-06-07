@@ -14,14 +14,14 @@
 
 body {background-color: #f1f1f1;}
 
-.container {margin: 35px;}
+.container {margin: 50px;}
 
 .navbar-inner h3 {color:#fff; /*width: 90%;*/ margin: 20px;}
 /*
 .navbar-inner {padding: 20px !important; margin-top: 10px; background-color: #34495E !important; color: #fff; -webkit-border-radius:none !important; border-radius:none !important;}
 */
 
-.row {margin-top: 25px;}
+.row {margin-top: 20px;}
 
 .nav-list {margin-top: 20px;}
 
@@ -34,3 +34,5 @@ body {background-color: #f1f1f1;}
 .btn-inverse a:hover { background-color: #415B76 !important;}
 
 h1 {color: #34495E !important;}
+
+.login-list {margin-left: 0px !important;}
