@@ -6,16 +6,29 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    #content
+
+    = link_to 'Sair', destroy_user_session_path, method: 'delete'
+
+    %div.navbar.navbar-inverse.navbar-fixed-top
       .navbar-inner
         %h3 Sistema para controle de parque tecnológico e derivados - SISCONTEC
-      
-      %br
-      
-      - if alert
-        %p.alert
-          = alert
-   
-      = link_to 'Sair', destroy_user_session_path, method: 'delete'
 
-      = yield
+    .container
+
+      .row
+      
+        %br
+      
+        - if alert
+          %p.alert
+            = alert
+   
+      
+        %div.span3.bs-docs-sidenav
+          %ul.nav.nav-tabs.nav-stacked
+            %li
+              = link_to 'Softwares', 'softwares_path'
+            %li
+              = link_to 'Órgãos', 'orgaos_path'  
+        %div.span9
+          = yield

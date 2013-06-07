@@ -6,32 +6,16 @@
       %th Nome
       %th Tipo
       %th Vinculo
-      %th Endereco
-      %th Bairro
-      %th Cep
       %th Telefone
       %th Secretario
-      %th Email secretario
-      %th Nome secretaria
-      %th Telefone secretaria
-      %th Email secretaria
-      %th Atribuicoes orgao
   %tbody  
   - @orgaos.each do |orgao|
     %tr
       %td= orgao.nome
       %td= orgao.tipo
       %td= orgao.vinculo
-      %td= orgao.endereco
-      %td= orgao.bairro
-      %td= orgao.cep
       %td= orgao.telefone
       %td= orgao.secretario
-      %td= orgao.email_secretario
-      %td= orgao.nome_secretaria
-      %td= orgao.telefone_secretaria
-      %td= orgao.email_secretaria
-      %td= orgao.atribuicoes_orgao
       %td.opcoes
         = link_to 'Mostrar', orgao
       %td.opcoes

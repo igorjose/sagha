@@ -14,9 +14,16 @@
 
 body {background-color: #f1f1f1;}
 
-#content {width: 90%; margin: 0 auto;}
+.container {margin: 35px;}
 
-.navbar-inner {padding: 20px !important; margin-top: 10px; background-color: #34495E !important; color: #fff;}
+.navbar-inner h3 {color:#fff; /*width: 90%;*/ margin: 20px;}
+/*
+.navbar-inner {padding: 20px !important; margin-top: 10px; background-color: #34495E !important; color: #fff; -webkit-border-radius:none !important; border-radius:none !important;}
+*/
+
+.row {margin-top: 25px;}
+
+.nav-list {margin-top: 20px;}
 
 .opcoes {width: 25px;}
 
