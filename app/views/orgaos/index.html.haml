@@ -1,24 +1,22 @@
-%h1 Listing orgaos
+%h1 Listar órgãos cadastrados
 
-%table
-  %tr
-    %th Nome
-    %th Tipo
-    %th Vinculo
-    %th Endereco
-    %th Bairro
-    %th Cep
-    %th Telefone
-    %th Secretario
-    %th Email secretario
-    %th Nome secretaria
-    %th Telefone secretaria
-    %th Email secretaria
-    %th Atribuicoes orgao
-    %th
-    %th
-    %th
-
+%table.table.table-hover
+  %thead
+    %tr
+      %th Nome
+      %th Tipo
+      %th Vinculo
+      %th Endereco
+      %th Bairro
+      %th Cep
+      %th Telefone
+      %th Secretario
+      %th Email secretario
+      %th Nome secretaria
+      %th Telefone secretaria
+      %th Email secretaria
+      %th Atribuicoes orgao
+  %tbody  
   - @orgaos.each do |orgao|
     %tr
       %td= orgao.nome
@@ -34,10 +32,14 @@
       %td= orgao.telefone_secretaria
       %td= orgao.email_secretaria
       %td= orgao.atribuicoes_orgao
-      %td= link_to 'Show', orgao
-      %td= link_to 'Edit', edit_orgao_path(orgao)
-      %td= link_to 'Destroy', orgao, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td.opcoes
+        = link_to 'Mostrar', orgao
+      %td.opcoes
+        = link_to 'Editar', edit_orgao_path(orgao)
+      %td.opcoes
+        = link_to 'Excluir', orgao, :method => :delete, :data => { :confirm => 'Você tem certeza?' }
 
 %br
 
-= link_to 'New Orgao', new_orgao_path
+.btn.btn-small.btn-inverse
+  = link_to 'Novo Órgão', new_orgao_path

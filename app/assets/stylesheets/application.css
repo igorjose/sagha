@@ -11,3 +11,17 @@
  *= require_self
  *= require_tree .
  */
+
+body {background-color: #f1f1f1;}
+
+#content {width: 90%; margin: 0 auto;}
+
+.navbar-inner {padding: 20px !important; margin-top: 10px; background-color: #34495E !important; color: #fff;}
+
+.opcoes {width: 25px;}
+
+.btn-inverse a {color: #fff !important; text-decoration: none;}
+
+.btn-inverse a:hover { background-color: #415B76 !important;}
+
+h1 {color: #34495E !important;}

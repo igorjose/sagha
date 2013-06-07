@@ -1,19 +1,24 @@
-%h1 Listing softwares
+%h1 Listar softwares cadastrados
 
-%table
-  %tr
-    %th Nome
-    %th
-    %th
-    %th
-
+%table.table.table-hover
+  %thead
+    %tr
+      %th Nome do software
+  %tbody
   - @softwares.each do |software|
     %tr
       %td= software.nome
-      %td= link_to 'Show', software
-      %td= link_to 'Edit', edit_software_path(software)
-      %td= link_to 'Destroy', software, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td.opcoes
+        %span.icons.fui-time-24
+          = link_to 'Mostrar', software
+      %td.opcoes
+        %span.icons.fui-time-24
+          = link_to 'Editar', edit_software_path(software)
+      %td.opcoes
+        %span.icons.fui-time-24
+          = link_to 'Excluir', software, :method => :delete, :data => { :confirm => 'Você tem certeza?' }
 
 %br
 
-= link_to 'New Software', new_software_path
+.btn.btn-small.btn-inverse
+  = link_to 'Novo Software', new_software_path
