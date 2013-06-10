@@ -4,7 +4,7 @@ Sagha::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "softwares#index"
+  root :to => "home#index"
 
   get 'inicial', to: 'home#index', as: :index
 

@@ -23,6 +23,9 @@ body {background-color: #f1f1f1;}
 
 .titulo {padding: 10px; color: #D1AC6B !important; text-decoration: none;}
 
+.titulo-inicial {color: #D1AC6B;}
+.texto {background-color: #f1f1f1; padding: 25px;}
+
 .row {margin-top: 20px;}
 
 .nav-list {margin-top: 20px;}
