@@ -2,14 +2,19 @@
   = f.error_notification
 
   .inputs
-    = f.input :descricao_defeito
     = f.input :qtd_funcionando
     = f.input :qtd_defeito
+    = f.input :descricao_defeito
     = f.input :qtd_extra
-    = f.input :qtd_manutencao
     = f.input :qtd_emprestado
+    = f.input :lugar_emprestado
     = f.input :qtd_garantia
-    = f.input :qtd_vigencia_contrato
+    = f.input :tem_contrato_locacao
+    = f.input :qtd_alugados
+    = f.input :vigencia_contrato_locacao
+    = f.input :tem_contrato_manutencao
+    = f.input :qtd_manutencao
+    = f.input :vigencia_contrato_manutencao
 
   .actions
     = f.button :submit, class: 'btn btn-success', value: 'Cadastrar Desktop'

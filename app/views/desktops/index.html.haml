@@ -3,25 +3,20 @@
 %table.table.table-hover
   %thead
     %tr
-      %th Descricao defeito
       %th Qtd funcionando
       %th Qtd defeito
       %th Qtd extra
       %th Qtd manutencao
-      %th Qtd emprestado
-      %th Qtd garantia
-      %th Qtd vigencia contrato
+      %th
+      %th
+      %th
   %tbody
   - @desktops.each do |desktop|
     %tr
-      %td= desktop.descricao_defeito
       %td= desktop.qtd_funcionando
       %td= desktop.qtd_defeito
       %td= desktop.qtd_extra
       %td= desktop.qtd_manutencao
-      %td= desktop.qtd_emprestado
-      %td= desktop.qtd_garantia
-      %td= desktop.qtd_vigencia_contrato
       %td.opcoes
         %span.icons.fui-time-24
           = link_to 'Mostrar', desktop

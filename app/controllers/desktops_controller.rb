@@ -28,7 +28,7 @@ class DesktopsController < ApplicationController
 
     respond_to do |format|
       if @desktop.save
-        format.html { redirect_to @desktop, notice: 'Desktop was successfully created.' }
+        format.html { redirect_to @desktop, notice: 'Desktop criado com sucesso.' }
         format.json { render action: 'show', status: :created, location: @desktop }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class DesktopsController < ApplicationController
   def update
     respond_to do |format|
       if @desktop.update(desktop_params)
-        format.html { redirect_to @desktop, notice: 'Desktop was successfully updated.' }
+        format.html { redirect_to @desktop, notice: 'Desktop atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +69,6 @@ class DesktopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def desktop_params
-      params.require(:desktop).permit(:descricao_defeito, :qtd_funcionando, :qtd_defeito, :qtd_extra, :qtd_manutencao, :qtd_emprestado, :qtd_garantia, :qtd_vigencia_contrato)
+      params.require(:desktop).permit(:qtd_funcionando, :qtd_defeito, :descricao_defeito, :qtd_extra, :qtd_emprestado, :lugar_emprestado, :qtd_garantia, :tem_contrato_locacao, :qtd_alugados, :vigencia_contrato_locacao, :tem_contrato_manutencao, :qtd_manutencao, :vigencia_contrato_manutencao)
     end
 end

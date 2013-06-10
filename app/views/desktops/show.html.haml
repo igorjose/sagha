@@ -5,14 +5,19 @@
 %table.table.table-hover
   %tr
     %td
-      %b Descricao defeito:
-    %td
-      = @desktop.descricao_defeito
-  %tr
-    %td
       %b Qtd funcionando:
     %td
       = @desktop.qtd_funcionando
+  %tr
+    %td
+      %b Qtd defeito:
+    %td
+      = @desktop.qtd_defeito      
+  %tr
+    %td
+      %b Descrição do defeito:
+    %td
+      = @desktop.descricao_defeito
   %tr
     %td
       %b Qtd extra:
@@ -20,14 +25,14 @@
       = @desktop.qtd_extra
   %tr
     %td
-      %b Qtd manutencao:
-    %td
-      = @desktop.qtd_manutencao
-  %tr
-    %td
       %b Qtd emprestado:
     %td
       = @desktop.qtd_emprestado
+  %tr
+    %td
+      %b Lugar emprestado:
+    %td
+      = @desktop.lugar_emprestado
   %tr
     %td
       %b Qtd garantia:
@@ -35,9 +40,34 @@
       = @desktop.qtd_garantia
   %tr
     %td
-      %b Qtd vigencia contrato:
+      %b Tem contrato locação?
     %td
-      = @desktop.qtd_vigencia_contrato
+      = @desktop.tem_contrato_locacao
+  %tr
+    %td
+      %b Qtd alugados:
+    %td
+      = @desktop.qtd_alugados
+  %tr
+    %td
+      %b Vigência contrato locação:
+    %td
+      = @desktop.vigencia_contrato_locacao
+  %tr
+    %td
+      %b Tem contrato manutenção?
+    %td
+      = @desktop.tem_contrato_manutencao
+  %tr
+    %td
+      %b Qtd manutenção:
+    %td
+      = @desktop.qtd_manutencao
+  %tr
+    %td
+      %b Vigência contrato manutenção:
+    %td
+      = @desktop.vigencia_contrato_manutencao
 
 %br      
 

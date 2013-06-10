@@ -14,14 +14,19 @@
 ActiveRecord::Schema.define(version: 20130610175509) do
 
   create_table "desktops", force: true do |t|
-    t.string   "descricao_defeito"
     t.integer  "qtd_funcionando"
     t.integer  "qtd_defeito"
+    t.string   "descricao_defeito"
     t.integer  "qtd_extra"
-    t.integer  "qtd_manutencao"
     t.integer  "qtd_emprestado"
+    t.string   "lugar_emprestado"
     t.integer  "qtd_garantia"
-    t.integer  "qtd_vigencia_contrato"
+    t.boolean  "tem_contrato_locacao"
+    t.integer  "qtd_alugados"
+    t.integer  "vigencia_contrato_locacao"
+    t.boolean  "tem_contrato_manutencao"
+    t.integer  "qtd_manutencao"
+    t.integer  "vigencia_contrato_manutencao"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
