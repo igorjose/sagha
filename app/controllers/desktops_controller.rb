@@ -69,6 +69,6 @@ class DesktopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def desktop_params
-      params.require(:desktop).permit(:qtd_funcionando, :qtd_defeito, :descricao_defeito, :qtd_extra, :qtd_emprestado, :lugar_emprestado, :qtd_garantia, :tem_contrato_locacao, :qtd_alugados, :vigencia_contrato_locacao, :tem_contrato_manutencao, :qtd_manutencao, :vigencia_contrato_manutencao)
+      params.require(:desktop).permit(:qtd_funcionando, :qtd_extra, :qtd_defeito, :descricao_defeito, :qtd_emprestado, :lugar_emprestado, :qtd_garantia, :tem_contrato_locacao, :qtd_alugados, :descricao_locacao, :vigencia_contrato_locacao, :tem_contrato_manutencao, :qtd_manutencao, :descricao_manutencao, :vigencia_contrato_manutencao)
     end
 end
