@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130606200045) do
+ActiveRecord::Schema.define(version: 20130610175509) do
+
+  create_table "desktops", force: true do |t|
+    t.string   "descricao_defeito"
+    t.integer  "qtd_funcionando"
+    t.integer  "qtd_defeito"
+    t.integer  "qtd_extra"
+    t.integer  "qtd_manutencao"
+    t.integer  "qtd_emprestado"
+    t.integer  "qtd_garantia"
+    t.integer  "qtd_vigencia_contrato"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "orgaos", force: true do |t|
     t.string   "nome"

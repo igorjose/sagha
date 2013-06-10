@@ -1,4 +1,6 @@
 Sagha::Application.routes.draw do
+  resources :desktops
+
   resources :softwares
   resources :orgaos
 

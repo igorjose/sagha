@@ -1,0 +1,37 @@
+%h1 Listar desktops cadastrados
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Descricao defeito
+      %th Qtd funcionando
+      %th Qtd defeito
+      %th Qtd extra
+      %th Qtd manutencao
+      %th Qtd emprestado
+      %th Qtd garantia
+      %th Qtd vigencia contrato
+  %tbody
+  - @desktops.each do |desktop|
+    %tr
+      %td= desktop.descricao_defeito
+      %td= desktop.qtd_funcionando
+      %td= desktop.qtd_defeito
+      %td= desktop.qtd_extra
+      %td= desktop.qtd_manutencao
+      %td= desktop.qtd_emprestado
+      %td= desktop.qtd_garantia
+      %td= desktop.qtd_vigencia_contrato
+      %td.opcoes
+        %span.icons.fui-time-24
+          = link_to 'Mostrar', desktop
+      %td.opcoes
+        %span.icons.fui-time-24
+          = link_to 'Editar', edit_desktop_path(desktop)
+      %td.opcoes
+        %span.icons.fui-time-24
+          = link_to 'Excluir', desktop, :method => :delete, :data => { :confirm => 'Você tem certeza?' }
+
+%br
+
+= link_to 'Novo Desktop', new_desktop_path

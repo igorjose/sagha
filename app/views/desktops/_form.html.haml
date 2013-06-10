@@ -1,0 +1,15 @@
+= simple_form_for(@desktop) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :descricao_defeito
+    = f.input :qtd_funcionando
+    = f.input :qtd_defeito
+    = f.input :qtd_extra
+    = f.input :qtd_manutencao
+    = f.input :qtd_emprestado
+    = f.input :qtd_garantia
+    = f.input :qtd_vigencia_contrato
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar Desktop'

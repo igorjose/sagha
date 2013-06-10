@@ -1,0 +1,48 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar desktop selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Descricao defeito:
+    %td
+      = @desktop.descricao_defeito
+  %tr
+    %td
+      %b Qtd funcionando:
+    %td
+      = @desktop.qtd_funcionando
+  %tr
+    %td
+      %b Qtd extra:
+    %td
+      = @desktop.qtd_extra
+  %tr
+    %td
+      %b Qtd manutencao:
+    %td
+      = @desktop.qtd_manutencao
+  %tr
+    %td
+      %b Qtd emprestado:
+    %td
+      = @desktop.qtd_emprestado
+  %tr
+    %td
+      %b Qtd garantia:
+    %td
+      = @desktop.qtd_garantia
+  %tr
+    %td
+      %b Qtd vigencia contrato:
+    %td
+      = @desktop.qtd_vigencia_contrato
+
+%br      
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_desktop_path(@desktop)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', desktops_path
