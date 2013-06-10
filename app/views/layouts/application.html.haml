@@ -7,38 +7,37 @@
     = csrf_meta_tags
   %body
 
-   
 
-    %div.navbar.navbar-inverse.navbar-fixed-top
+    .navbar.navbar-inverse.navbar-fixed-top
       .navbar-inner
-        %h3 Sistema para controle de parque tecnológico e derivados - SISCONTEC
+        .container-fluid
+          %a.brand.titulo SISCONTEC
+          .nav-collapse.collapse
+            %p.navbar-text.pull-right.login-list
+              - if user_signed_in?
+                Bem vindo,
+                = current_user.email
+                = link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link'
+                = link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'
+
+              - else
+                = link_to 'Login', new_user_session_path, :class => 'navbar-link' 
+            %ul.nav
+              %li
+                = link_to 'Inicial', softwares_path
+              %li
+                = link_to 'Softwares', softwares_path
+              %li
+                = link_to 'Órgãos', orgaos_path 
+     
 
     .container
 
-      .row.login-list
-        %br
-        - if user_signed_in?
-          Bem vindo,
-          = current_user.email
-          = link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link'
-          = link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'
-
-        - else
-          = link_to 'Sign up', new_user_registration_path, :class => 'navbar-link'
-          = link_to 'Login', new_user_session_path, :class => 'navbar-link'  
-
       .row
-      
         - if alert
           %p.alert
             = alert
 
-
-        %div.span3.bs-docs-sidenav
-          %ul.nav.nav-tabs.nav-stacked
-            %li
-              = link_to 'Softwares', 'softwares_path'
-            %li
-              = link_to 'Órgãos', 'orgaos_path'  
-        %div.span9
+   
+        %div.span12
           = yield
