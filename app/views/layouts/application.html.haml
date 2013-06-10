@@ -23,12 +23,13 @@
               - else
                 = link_to 'Login', new_user_session_path, :class => 'navbar-link' 
             %ul.nav
-              %li
-                = link_to 'Inicial', softwares_path
-              %li
-                = link_to 'Softwares', softwares_path
-              %li
-                = link_to 'Órgãos', orgaos_path 
+              - if user_signed_in?
+                %li
+                  = link_to 'Inicial', softwares_path
+                %li
+                  = link_to 'Softwares', softwares_path
+                %li
+                  = link_to 'Órgãos', orgaos_path 
      
 
     .container
