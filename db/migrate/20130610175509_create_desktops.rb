@@ -11,11 +11,9 @@ class CreateDesktops < ActiveRecord::Migration
       t.boolean :tem_contrato_locacao
       t.integer :qtd_alugados
       t.string :descricao_locacao
-      t.integer :vigencia_contrato_locacao
       t.boolean :tem_contrato_manutencao
       t.integer :qtd_manutencao
       t.string :descricao_manutencao
-      t.integer :vigencia_contrato_manutencao
 
       t.timestamps
     end

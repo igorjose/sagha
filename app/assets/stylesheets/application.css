@@ -44,3 +44,5 @@ h1 {color: #34495E !important;}
 .login-list a:hover {text-decoration: underline !important;}
 
 .formulario-login {width: 360px; height: 350px; border: 1px solid #E5E5E5; padding: 20px; margin:0 auto; margin-top: 20px;}
+
+.input-textarea {width: 435px;}
