@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  descricao_defeito: MyString
+  qtd_funcionando: 1
+  qtd_defeito: 1
+  qtd_extra: 1
+  qtd_manutencao: 1
+  qtd_emprestado: 1
+  qtd_garantia: 1
+  qtd_vigencia_contrato: 1
+
+two:
+  descricao_defeito: MyString
+  qtd_funcionando: 1
+  qtd_defeito: 1
+  qtd_extra: 1
+  qtd_manutencao: 1
+  qtd_emprestado: 1
+  qtd_garantia: 1
+  qtd_vigencia_contrato: 1

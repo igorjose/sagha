@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  orgao_id: 1
+  software_id: 1
+  quantidade: 1
+
+two:
+  orgao_id: 1
+  software_id: 1
+  quantidade: 1

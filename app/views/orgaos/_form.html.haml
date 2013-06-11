@@ -2,19 +2,18 @@
   = f.error_notification
 
   .inputs
-    = f.input :nome
-    = f.input :tipo
-    = f.input :vinculo
-    = f.input :endereco
-    = f.input :bairro
-    = f.input :cep
-    = f.input :telefone
-    = f.input :secretario
-    = f.input :email_secretario
-    = f.input :nome_secretaria
-    = f.input :telefone_secretaria
-    = f.input :email_secretaria
-    = f.input :atribuicoes_orgao
-
+    = f.input :nome, label: 'Nome do órgão', input_html: { class: 'span6' }
+    = f.input :tipo, label: 'Tipo do órgão', input_html: { class: 'span6' }
+    = f.input :vinculo, label: 'Vínculo do órgão', input_html: { class: 'span6' }
+    = f.input :endereco, as: :text, placeholder: "Digite aqui o endereço do órgão", label: 'Endereço', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+    = f.input :bairro, label: 'Bairro', input_html: { class: 'span6' }
+    = f.input :cep, label: 'CEP', input_html: { class: 'span6' }
+    = f.input :telefone, label: 'Telefone', input_html: { class: 'span6' }
+    = f.input :secretario, label: 'Nome do secretário', input_html: { class: 'span6' }
+    = f.input :email_secretario, label: 'Email do secretário', input_html: { class: 'span6' }
+    = f.input :nome_secretaria, label: 'Nome da secretária', input_html: { class: 'span6' }
+    = f.input :telefone_secretaria, label: 'Telefone da secretária', input_html: { class: 'span6' }
+    = f.input :email_secretaria, label: 'Email da secretária', input_html: { class: 'span6' }
+    = f.input :atribuicoes_orgao, as: :text, placeholder: "Digite as atribuições do órgão", label: 'Atribuições do órgão', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
   .actions
     = f.button :submit, class: 'btn btn-success', value: 'Cadastrar Órgão'

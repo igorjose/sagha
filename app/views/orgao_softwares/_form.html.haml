@@ -1,0 +1,10 @@
+= simple_form_for(@orgao_software) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :orgao_id
+    = f.association :software, :required => true, input_html: {class: 'select-block'}, label_method: :nome
+    = f.input :quantidade
+
+  .actions
+    = f.button :submit
