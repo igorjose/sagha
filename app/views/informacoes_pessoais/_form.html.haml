@@ -1,0 +1,22 @@
+= simple_form_for(@informacao_pessoal) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :cargo_id
+    = f.input :nome
+    = f.input :telefone
+    = f.input :celular_cooperativo
+    = f.input :celular_pessoal
+    = f.input :email_cooperativo
+    = f.input :email_pessoal
+    = f.input :tipo_contratacao
+    = f.input :vigencia_contrato
+    = f.input :pode_renovar
+    = f.input :mini_curriculo
+    = f.input :experiencia
+    = f.input :cursos
+    = f.input :conhecimentos_adicionais
+    = f.input :observacoes
+
+  .actions
+    = f.button :submit

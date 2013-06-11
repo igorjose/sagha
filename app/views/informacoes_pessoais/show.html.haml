@@ -1,0 +1,51 @@
+%p#notice= notice
+
+%p
+  %b Cargo:
+  = @informacao_pessoal.cargo_id
+%p
+  %b Nome:
+  = @informacao_pessoal.nome
+%p
+  %b Telefone:
+  = @informacao_pessoal.telefone
+%p
+  %b Celular cooperativo:
+  = @informacao_pessoal.celular_cooperativo
+%p
+  %b Celular pessoal:
+  = @informacao_pessoal.celular_pessoal
+%p
+  %b Email cooperativo:
+  = @informacao_pessoal.email_cooperativo
+%p
+  %b Email pessoal:
+  = @informacao_pessoal.email_pessoal
+%p
+  %b Tipo contratacao:
+  = @informacao_pessoal.tipo_contratacao
+%p
+  %b Vigencia contrato:
+  = @informacao_pessoal.vigencia_contrato
+%p
+  %b Pode renovar:
+  = @informacao_pessoal.pode_renovar
+%p
+  %b Mini curriculo:
+  = @informacao_pessoal.mini_curriculo
+%p
+  %b Experiencia:
+  = @informacao_pessoal.experiencia
+%p
+  %b Cursos:
+  = @informacao_pessoal.cursos
+%p
+  %b Conhecimentos adicionais:
+  = @informacao_pessoal.conhecimentos_adicionais
+%p
+  %b Observacoes:
+  = @informacao_pessoal.observacoes
+
+= link_to 'Edit', edit_informacao_pessoal_path(@informacao_pessoal)
+\|
+= link_to 'Back', informacoes_pessoais_path

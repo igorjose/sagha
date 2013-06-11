@@ -1,4 +1,8 @@
 Sagha::Application.routes.draw do
+  resources :informacoes_pessoais
+
+  resources :informacao_pessoals
+
   resources :orgao_softwares
 
   resources :desktops
