@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130611150251) do
+ActiveRecord::Schema.define(version: 20130611170421) do
 
   create_table "desktops", force: true do |t|
     t.integer  "qtd_funcionando"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20130611150251) do
     t.boolean  "tem_contrato_manutencao"
     t.integer  "qtd_manutencao"
     t.string   "descricao_manutencao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orgao_softwares", force: true do |t|
+    t.integer  "orgao_id"
+    t.integer  "software_id"
+    t.integer  "quantidade"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

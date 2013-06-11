@@ -1,0 +1,23 @@
+%h1 Listing orgao_softwares
+
+%table
+  %tr
+    %th Orgao
+    %th Software
+    %th Quantidade
+    %th
+    %th
+    %th
+
+  - @orgao_softwares.each do |orgao_software|
+    %tr
+      %td= orgao_software.orgao_id
+      %td= orgao_software.software_id
+      %td= orgao_software.quantidade
+      %td= link_to 'Show', orgao_software
+      %td= link_to 'Edit', edit_orgao_software_path(orgao_software)
+      %td= link_to 'Destroy', orgao_software, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Orgao software', new_orgao_software_path

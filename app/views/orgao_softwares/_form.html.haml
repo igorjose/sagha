@@ -1,0 +1,10 @@
+= simple_form_for(@orgao_software) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :orgao_id
+    = f.association :softwares, label_method: :nome, as: :select
+    = f.input :quantidade
+
+  .actions
+    = f.button :submit
