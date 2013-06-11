@@ -24,6 +24,8 @@ class DesktopsController < ApplicationController
   # POST /desktops
   # POST /desktops.json
   def create
+    desktop_params[:orgao_id] = current_user.orgao_id
+
     @desktop = Desktop.new(desktop_params)
 
     respond_to do |format|

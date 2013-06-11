@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130611170421) do
+ActiveRecord::Schema.define(version: 20130611181105) do
 
   create_table "desktops", force: true do |t|
     t.integer  "qtd_funcionando"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20130611170421) do
     t.string   "descricao_manutencao"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   create_table "orgao_softwares", force: true do |t|
@@ -76,6 +77,7 @@ ActiveRecord::Schema.define(version: 20130611170421) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
