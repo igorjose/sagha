@@ -1,4 +1,4 @@
 class OrgaoSoftware < ActiveRecord::Base
   belongs_to :orgao
-  has_many :softwares
+  belongs_to :software
 end
