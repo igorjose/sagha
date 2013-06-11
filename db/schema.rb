@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130610175509) do
+ActiveRecord::Schema.define(version: 20130611150251) do
 
   create_table "desktops", force: true do |t|
     t.integer  "qtd_funcionando"
@@ -24,11 +24,9 @@ ActiveRecord::Schema.define(version: 20130610175509) do
     t.boolean  "tem_contrato_locacao"
     t.integer  "qtd_alugados"
     t.string   "descricao_locacao"
-    t.integer  "vigencia_contrato_locacao"
     t.boolean  "tem_contrato_manutencao"
     t.integer  "qtd_manutencao"
     t.string   "descricao_manutencao"
-    t.integer  "vigencia_contrato_manutencao"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -70,7 +68,6 @@ ActiveRecord::Schema.define(version: 20130610175509) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "orgao_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

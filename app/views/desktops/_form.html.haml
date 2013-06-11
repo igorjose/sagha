@@ -11,12 +11,10 @@
     = f.input :qtd_garantia
     = f.input :tem_contrato_locacao
     = f.input :qtd_alugados
-    = f.input :descricao_locacao
-    = f.input :vigencia_contrato_locacao
+    = f.input :descricao_locacao, as: :text
     = f.input :tem_contrato_manutencao
     = f.input :qtd_manutencao
-    = f.input :descricao_manutencao
-    = f.input :vigencia_contrato_manutencao
+    = f.input :descricao_manutencao, as: :text, placeholder: "Digite as informações sobre o contrato bem como sua data de validade"
 
   .actions
     = f.button :submit, class: 'btn btn-success', value: 'Cadastrar Desktop'
