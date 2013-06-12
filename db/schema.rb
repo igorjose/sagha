@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130606200045) do
+ActiveRecord::Schema.define(version: 20130611195257) do
+
+  create_table "desktops", force: true do |t|
+    t.integer  "qtd_funcionando"
+    t.integer  "qtd_extra"
+    t.integer  "qtd_defeito"
+    t.string   "descricao_defeito"
+    t.integer  "qtd_emprestado"
+    t.string   "lugar_emprestado"
+    t.integer  "qtd_garantia"
+    t.boolean  "tem_contrato_locacao"
+    t.integer  "qtd_alugados"
+    t.string   "descricao_locacao"
+    t.boolean  "tem_contrato_manutencao"
+    t.integer  "qtd_manutencao"
+    t.string   "descricao_manutencao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "orgao_id"
+  end
+
+  create_table "orgao_softwares", force: true do |t|
+    t.integer  "orgao_id"
+    t.integer  "software_id"
+    t.integer  "quantidade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "orgaos", force: true do |t|
     t.string   "nome"
@@ -38,8 +65,8 @@ ActiveRecord::Schema.define(version: 20130606200045) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -50,6 +77,8 @@ ActiveRecord::Schema.define(version: 20130606200045) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

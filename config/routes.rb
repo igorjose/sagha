@@ -1,9 +1,17 @@
 Sagha::Application.routes.draw do
-  resources :softwares
+  resources :orgao_softwares
 
+  resources :desktops
+
+  resources :softwares
   resources :orgaos
 
   devise_for :users
+
+  root :to => "home#index"
+
+  get 'inicial', to: 'home#index', as: :index
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

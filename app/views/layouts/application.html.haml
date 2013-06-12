@@ -1,9 +1,57 @@
 !!!
 %html
   %head
-    %title Sagha
+    %title Sistema para controle de parque tecnológico e derivados
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    = yield
+
+
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          %a.brand.titulo SISCONTEC
+          .nav-collapse.collapse
+            %p.navbar-text.pull-right.login-list
+              - if user_signed_in?
+                Bem vindo,
+                = current_user.email
+                = link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link'
+                = link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'
+
+              - else
+                = link_to 'Login', new_user_session_path, :class => 'navbar-link' 
+            %ul.nav
+              - if user_signed_in?
+                %li
+                  = link_to 'Inicial', index_path
+                %li
+                  = link_to 'Formulários', '#'
+                  %ul
+                    %li
+                      - desktop = Desktop.find_by(orgao_id: current_user.orgao_id)
+                      - if desktop
+                        = link_to 'Desktops', desktop_path(desktop)
+                      - else
+                        = link_to 'Desktops', new_desktop_path
+                    %li
+                      = link_to 'Softwares Utilizados', orgao_softwares_path
+                %li
+                  = link_to 'Softwares', softwares_path
+                %li
+                  = link_to 'Órgãos', orgaos_path
+                %li
+                  = link_to 'Desktops', desktops_path
+     
+
+    .container
+
+      .row
+        - if alert
+          %p.alert
+            = alert
+
+   
+        %div.span12
+          = yield

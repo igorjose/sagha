@@ -11,3 +11,38 @@
  *= require_self
  *= require_tree .
  */
+
+body {background-color: #f1f1f1;}
+
+.container {margin: 50px;}
+
+.navbar-inner h3 {color:#fff; /*width: 90%;*/ margin: 20px;}
+/*
+.navbar-inner {padding: 20px !important; margin-top: 10px; background-color: #34495E !important; color: #fff; -webkit-border-radius:none !important; border-radius:none !important;}
+*/
+
+.titulo {padding: 10px; color: #D1AC6B !important; text-decoration: none;}
+
+.titulo-inicial {color: #D1AC6B;}
+.texto {background-color: #f1f1f1; padding: 25px;}
+
+.row {margin-top: 20px;}
+
+.nav-list {margin-top: 20px;}
+
+.opcoes {width: 25px;}
+
+.alert {margin: 8px 0 8px 0;}
+
+.btn-inverse a {color: #fff !important; text-decoration: none;}
+
+.btn-inverse a:hover { background-color: #415B76 !important;}
+
+h1 {color: #34495E !important;}
+
+.login-list a {font-size: 13px; color:#fff !important; text-decoration: none !important; padding-left:5px;}
+.login-list a:hover {text-decoration: underline !important;}
+
+.formulario-login {width: 360px; height: 350px; border: 1px solid #E5E5E5; padding: 20px; margin:0 auto; margin-top: 20px;}
+
+.input-textarea {width: 435px;}
