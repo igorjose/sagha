@@ -11,8 +11,8 @@
 
   - @orgao_softwares.each do |orgao_software|
     %tr
-      %td= orgao_software.orgao_id
-      %td= orgao_software.software_id
+      %td= orgao_software.orgao.nome
+      %td= orgao_software.software.nome
       %td= orgao_software.quantidade
       %td
         = link_to orgao_software do
@@ -26,4 +26,4 @@
 
 %br
 
-= link_to 'New Orgao software', new_orgao_software_path
+= link_to 'Adicionar novo software', new_orgao_software_path
