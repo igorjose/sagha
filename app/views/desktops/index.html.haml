@@ -3,10 +3,10 @@
 %table.table.table-hover
   %thead
     %tr
-      %th Qtd funcionando
-      %th Qtd extra
-      %th Qtd defeito
-      %th Qtd manutencao
+      %th Quantidade de equipamentos funcionando
+      %th Quantidade de equipamentos extras
+      %th Quantidade com defeito
+      %th Quantidade em manuteção
       %th
       %th
       %th
@@ -17,15 +17,15 @@
       %td= desktop.qtd_extra
       %td= desktop.qtd_defeito
       %td= desktop.qtd_manutencao
-      %td.opcoes
-        %span.icons.fui-time-24
-          = link_to 'Mostrar', desktop
-      %td.opcoes
-        %span.icons.fui-time-24
-          = link_to 'Editar', edit_desktop_path(desktop)
-      %td.opcoes
-        %span.icons.fui-time-24
-          = link_to 'Excluir', desktop, :method => :delete, :data => { :confirm => 'Você tem certeza?' }
+      %td
+        = link_to desktop, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_desktop_path(desktop), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to desktop, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
 
 %br
 

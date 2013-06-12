@@ -1,47 +1,33 @@
-%h1 Listing informacoes_pessoais
+%h1 Listar Informações pessoais cadastradas
 
-%table
-  %tr
-    %th Cargo
-    %th Nome
-    %th Telefone
-    %th Celular cooperativo
-    %th Celular pessoal
-    %th Email cooperativo
-    %th Email pessoal
-    %th Tipo contratacao
-    %th Vigencia contrato
-    %th Pode renovar
-    %th Mini curriculo
-    %th Experiencia
-    %th Cursos
-    %th Conhecimentos adicionais
-    %th Observacoes
-    %th
-    %th
-    %th
-
+%table.table.table-hover
+  %thead
+    %tr
+      %th Cargo
+      %th Nome
+      %th Telefone
+      %th Email cooperativo
+      %th
+      %th
+      %th
+  %tbody
   - @informacoes_pessoais.each do |informacao_pessoal|
     %tr
       %td= informacao_pessoal.cargo_id
       %td= informacao_pessoal.nome
       %td= informacao_pessoal.telefone
-      %td= informacao_pessoal.celular_cooperativo
-      %td= informacao_pessoal.celular_pessoal
       %td= informacao_pessoal.email_cooperativo
-      %td= informacao_pessoal.email_pessoal
-      %td= informacao_pessoal.tipo_contratacao
-      %td= informacao_pessoal.vigencia_contrato
-      %td= informacao_pessoal.pode_renovar
-      %td= informacao_pessoal.mini_curriculo
-      %td= informacao_pessoal.experiencia
-      %td= informacao_pessoal.cursos
-      %td= informacao_pessoal.conhecimentos_adicionais
-      %td= informacao_pessoal.observacoes
-      %td= link_to 'Show', informacao_pessoal
-      %td= link_to 'Edit', edit_informacao_pessoal_path(informacao_pessoal)
-      %td= link_to 'Destroy', informacao_pessoal, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td
+        = link_to informacao_pessoal, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_informacao_pessoal_path(informacao_pessoal), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to informacao_pessoal, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
 
 %br
 
-= link_to 'New Informacao pessoal', new_informacao_pessoal_path
+.btn.btn-small.btn-inverse
+  = link_to 'Nova Informação pessoal', new_informacao_pessoal_path

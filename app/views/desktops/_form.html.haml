@@ -9,10 +9,14 @@
     = f.input :qtd_emprestado, label: 'Quantidade que estão emprestados', input_html: { class: 'span6' }
     = f.input :lugar_emprestado, label: 'Lugar que foram emprestados', placeholder: "Lugar ao qual foi emprestado", input_html: { class: 'span6' }
     = f.input :qtd_garantia, label: 'Quantidade que estão com garantia', input_html: { class: 'span6' }
-    = f.input :tem_contrato_locacao, label: 'Tem contrato de locação?'
+    %label.checkbox
+      %span
+        = f.input :tem_contrato_locacao, label: 'Tem contrato de locação?'
     = f.input :qtd_alugados, label: 'Quantidade que estão alugados', input_html: { class: 'span6' }
     = f.input :descricao_locacao, label: 'Descrição da locação', as: :text, placeholder: "Digite as informações sobre o contrato bem como sua data de validade", :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
-    = f.input :tem_contrato_manutencao, label: 'Tem contrato de manutenção?'
+    %label.checkbox
+      %span
+        = f.input :tem_contrato_manutencao, label: 'Tem contrato de manutenção?'
     = f.input :qtd_manutencao, label: 'Quantidade que estão em manutenção', input_html: { class: 'span6' }
     = f.input :descricao_manutencao, as: :text, label: 'Descrição da manutenção', placeholder: "Digite as informações sobre o contrato bem como sua data de validade", :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
 

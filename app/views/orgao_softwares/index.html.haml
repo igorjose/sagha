@@ -3,7 +3,7 @@
 %table.table.table-hover
   %thead
     %tr
-      %th Orgao
+      %th Órgão
       %th Software
       %th Quantidade
       %th
@@ -17,13 +17,13 @@
       %td= orgao_software.quantidade
       %td
         = link_to orgao_software, :title => 'Visualizar' do
-          %span.fui-eye{style: 'font-size: 24px'}
+          %span.fui-eye{:class => 'icons24'}
       %td
         = link_to edit_orgao_software_path(orgao_software), :title => 'Editar' do
-          %span.fui-new{style: 'font-size: 24px'}
+          %span.fui-new{:class => 'icons24'}
       %td 
-        = link_to orgao_software, :method => :delete, :title => 'teste', :data => { :confirm => 'Você tem certeza?' } do
-          %span.fui-cross{style: 'font-size: 24px'}
+        = link_to orgao_software, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
 
 %br
 

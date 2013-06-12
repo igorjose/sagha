@@ -28,7 +28,7 @@ class InformacoesPessoaisController < ApplicationController
 
     respond_to do |format|
       if @informacao_pessoal.save
-        format.html { redirect_to @informacao_pessoal, notice: 'Informacao pessoal was successfully created.' }
+        format.html { redirect_to @informacao_pessoal, notice: 'Informação pessoal criada com sucesso.' }
         format.json { render action: 'show', status: :created, location: @informacao_pessoal }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class InformacoesPessoaisController < ApplicationController
   def update
     respond_to do |format|
       if @informacao_pessoal.update(informacao_pessoal_params)
-        format.html { redirect_to @informacao_pessoal, notice: 'Informacao pessoal was successfully updated.' }
+        format.html { redirect_to @informacao_pessoal, notice: 'Informação pessoal atualizada com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

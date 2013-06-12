@@ -1,7 +1,8 @@
-%h1 Editing informacao_pessoal
+%h1 Editar Informação Pessoal
 
 = render 'form'
 
-= link_to 'Show', @informacao_pessoal
-\|
-= link_to 'Back', informacoes_pessoais_path
+.btn.btn-small.btn-inverse
+  = link_to 'Mostrar', @informacao_pessoal
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', informacoes_pessoais_path
