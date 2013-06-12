@@ -39,7 +39,7 @@ body {background-color: #f1f1f1;}
 .btn-inverse a:hover { background-color: #415B76 !important;}
 
 h1 {color: #34495E !important;}
-.login-list {margin-top: 6px;}
+.login-list {margin-top: 6px; font-size: 14px;}
 .login-list a {font-size: 13px; color:#fff !important; text-decoration: none !important; padding-left:5px;}
 .login-list a:hover {text-decoration: underline !important;}
 
