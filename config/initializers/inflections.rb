@@ -8,6 +8,7 @@
 #   inflect.singular /^(ox)en/i, '\1'
    inflect.irregular 'orgao', 'orgaos'
    inflect.irregular 'orgao_software', 'orgao_softwares'
+   inflect.irregular 'orgao_impressora', 'orgao_impressoras'
 #   inflect.uncountable %w( fish sheep )
  end
 

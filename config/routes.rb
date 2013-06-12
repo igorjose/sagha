@@ -1,4 +1,6 @@
 Sagha::Application.routes.draw do
+  resources :orgao_impressoras
+
   resources :orgao_softwares
 
   resources :desktops

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130611195257) do
+ActiveRecord::Schema.define(version: 20130612161525) do
 
   create_table "desktops", force: true do |t|
     t.integer  "qtd_funcionando"
@@ -31,6 +31,28 @@ ActiveRecord::Schema.define(version: 20130611195257) do
     t.datetime "updated_at"
     t.integer  "orgao_id"
   end
+
+  create_table "orgao_impressoras", force: true do |t|
+    t.integer  "orgao_id"
+    t.string   "tipo"
+    t.integer  "funcionando"
+    t.integer  "defeituosas"
+    t.text     "detalhes_defeituosas"
+    t.integer  "extras"
+    t.integer  "emprestadas"
+    t.text     "detalhes_emprestadas"
+    t.integer  "proprias"
+    t.integer  "alugadas"
+    t.integer  "em_garantia"
+    t.boolean  "tem_contrato_locacao"
+    t.boolean  "tem_contrato_manutencao"
+    t.text     "detalhes_contrato_manutencao"
+    t.text     "detalhes_contrato_locacao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orgao_impressoras", ["orgao_id", "tipo"], name: "index_orgao_impressoras_on_orgao_id_and_tipo", unique: true
 
   create_table "orgao_softwares", force: true do |t|
     t.integer  "orgao_id"
