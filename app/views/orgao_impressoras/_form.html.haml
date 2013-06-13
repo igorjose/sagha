@@ -1,0 +1,35 @@
+= simple_form_for(@orgao_impressora) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.association :orgao, :required => true, input_html: {class: 'span3'}, label_method: :nome
+    = f.input :tipo, as: :select, collection: ['Matricial', 'Jato de Tinta', 'Laser', 'Plotter', 'Térmica'], input_html: {class: 'span3'}
+    = f.input :funcionando
+    = f.input :defeituosas
+    = f.input :detalhes_defeituosas
+    = f.input :extras
+    = f.input :emprestadas
+    = f.input :detalhes_emprestadas
+    = f.input :proprias
+    = f.input :alugadas
+    = f.input :em_garantia
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.check_box :tem_contrato_locacao, data: {toggle: 'checkbox'}
+      tem contrato de locação
+    = f.input :detalhes_contrato_locacao
+
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.check_box :tem_contrato_manutencao, data: {toggle: 'checkbox'}
+      tem contrato de manutenção
+
+    = f.input :detalhes_contrato_manutencao
+
+  .actions
+    = f.button :submit
+

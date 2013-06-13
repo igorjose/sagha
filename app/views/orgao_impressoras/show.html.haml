@@ -1,0 +1,51 @@
+%p#notice= notice
+
+%p
+  %b Orgao:
+  = @orgao_impressora.orgao_id
+%p
+  %b Tipo:
+  = @orgao_impressora.tipo
+%p
+  %b Funcionando:
+  = @orgao_impressora.funcionando
+%p
+  %b Defeituosas:
+  = @orgao_impressora.defeituosas
+%p
+  %b Detalhes defeituosas:
+  = @orgao_impressora.detalhes_defeituosas
+%p
+  %b Extras:
+  = @orgao_impressora.extras
+%p
+  %b Emprestadas:
+  = @orgao_impressora.emprestadas
+%p
+  %b Detalhes emprestadas:
+  = @orgao_impressora.detalhes_emprestadas
+%p
+  %b Proprias:
+  = @orgao_impressora.proprias
+%p
+  %b Alugadas:
+  = @orgao_impressora.alugadas
+%p
+  %b Em garantia:
+  = @orgao_impressora.em_garantia
+%p
+  %b Tem contrato locacao:
+  = @orgao_impressora.tem_contrato_locacao
+%p
+  %b Tem contrato manutencao:
+  = @orgao_impressora.tem_contrato_manutencao
+%p
+  %b Detalhes contrato manutencao:
+  = @orgao_impressora.detalhes_contrato_manutencao
+%p
+  %b Detalhes contrato locacao:
+  = @orgao_impressora.detalhes_contrato_locacao
+
+= link_to 'Edit', edit_orgao_impressora_path(@orgao_impressora)
+\|
+= link_to 'Back', orgao_impressoras_path
