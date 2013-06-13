@@ -42,7 +42,7 @@ class OrgaosController < ApplicationController
   def update
     respond_to do |format|
       if @orgao.update(orgao_params)
-        format.html { redirect_to @orgao, notice: 'Órgão editado com sucesso!' }
+        format.html { redirect_to @orgao, notice: 'Órgão atualizado com sucesso!' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

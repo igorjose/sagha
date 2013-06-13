@@ -28,7 +28,7 @@ class OrgaoSoftwaresController < ApplicationController
 
     respond_to do |format|
       if @orgao_software.save
-        format.html { redirect_to @orgao_software, notice: 'Orgao software was successfully created.' }
+        format.html { redirect_to @orgao_software, notice: 'Órgão software criado com sucesso.' }
         format.json { render action: 'show', status: :created, location: @orgao_software }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class OrgaoSoftwaresController < ApplicationController
   def update
     respond_to do |format|
       if @orgao_software.update(orgao_software_params)
-        format.html { redirect_to @orgao_software, notice: 'Orgao software was successfully updated.' }
+        format.html { redirect_to @orgao_software, notice: 'Órgão software atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

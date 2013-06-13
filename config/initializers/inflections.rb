@@ -9,6 +9,8 @@
    inflect.irregular 'orgao', 'orgaos'
    inflect.irregular 'orgao_software', 'orgao_softwares'
    inflect.irregular 'orgao_impressora', 'orgao_impressoras'
+   inflect.irregular 'informacao_pessoal', 'informacoes_pessoais'
+   inflect.irregular 'cargo', 'cargos'  
 #   inflect.uncountable %w( fish sheep )
  end
 

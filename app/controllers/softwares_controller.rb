@@ -43,7 +43,7 @@ class SoftwaresController < ApplicationController
   def update
     respond_to do |format|
       if @software.update(software_params)
-        format.html { redirect_to @software, notice: 'Software editado com sucesso!' }
+        format.html { redirect_to @software, notice: 'Software atualizado com sucesso!' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

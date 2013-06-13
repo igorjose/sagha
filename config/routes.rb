@@ -1,5 +1,8 @@
 Sagha::Application.routes.draw do
   resources :orgao_impressoras
+  resources :cargos
+
+  resources :informacoes_pessoais
 
   resources :orgao_softwares
 

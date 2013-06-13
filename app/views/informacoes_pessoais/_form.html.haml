@@ -1,0 +1,30 @@
+= simple_form_for(@informacao_pessoal) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.association :cargo, label_method: :nome, label: 'Cargo exercido', input_html: { class: 'span6' }, label_html: {style: "display: block;"}
+    = f.input :nome, label: 'Nome', input_html: { class: 'span6' }
+    = f.input :telefone, label: 'Telefone', input_html: { class: 'span6' }
+    = f.input :celular_cooperativo, label: 'Celular coperativo', input_html: { class: 'span6' }
+    = f.input :celular_pessoal, label: 'Celular pessoal', input_html: { class: 'span6' }
+    = f.input :email_cooperativo, label: 'Email coperativo', input_html: { class: 'span6' }
+    = f.input :email_pessoal, label: 'Email pessoal', input_html: { class: 'span6' }
+    /= f.input :tipo_contratacao, label: 'Tipo de contratação', input_html: { class: 'span6' }
+    %label
+      Tipo de contratação &nbsp;
+      = f.select :tipo_contratacao, ([["Terceirizado", "Terceirizado"], ["Comissionado", "Comissionado"], ["Servidor", "Servidor"]]), input_html: { class: 'span6' }
+    = f.input :empresa, label: 'Se for terceirizado, qual empresa?', input_html: { class: 'span6' }
+    = f.input :vigencia_contrato, label: 'Vigência do contrato', input_html: { class: 'span2' }
+    %label.checkbox
+      %span
+        = f.input :pode_renovar, label: 'Pode renovar?'
+    = f.input :nivel_escolaridade, placeholder: "Digite seu nível de escolaridade atual", label: 'Nível de escolaridade', input_html: { class: 'span6' }
+    = f.input :mini_curriculo, placeholder: "Digite aqui seu mini currículo. Exemplo: Formação escolar, instituição, ano de conclusão.", label: 'Mini currículo', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+    = f.input :experiencia, placeholder: "Digite as suas experiências anteriores", label: 'Experiência', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+    = f.input :cursos, placeholder: "Digite os cursos realizados, período, instituição que realizou...", label: 'Cursos', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+    = f.input :certificacoes, placeholder: "Digite seus certificados.", label: 'Certificação', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+    = f.input :conhecimentos_adicionais, placeholder: "Digite outros conhecimentos relevantes", label: 'Conhecimentos adicionais', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+    = f.input :observacoes, placeholder: "Digite alguma outra observação", label: 'Observações', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+    
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar Informação Pessoal'

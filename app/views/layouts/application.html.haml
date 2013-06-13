@@ -39,12 +39,15 @@
                       = link_to 'Softwares Utilizados', orgao_softwares_path
                     %li
                       = link_to 'Impressoras', orgao_impressoras_path
+                    %li
+                      = link_to 'Informações pessoais', informacoes_pessoais_path
                 - if current_user.admin
                   %li
                     = link_to 'Softwares', softwares_path
                   %li
                     = link_to 'Órgãos', orgaos_path
-     
+                  %li
+                    = link_to 'Cargos', cargos_path
 
     .container
 

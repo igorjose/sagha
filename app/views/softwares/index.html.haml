@@ -8,15 +8,15 @@
   - @softwares.each do |software|
     %tr
       %td= software.nome
-      %td.opcoes
-        %span.icons.fui-time-24
-          = link_to 'Mostrar', software
-      %td.opcoes
-        %span.icons.fui-time-24
-          = link_to 'Editar', edit_software_path(software)
-      %td.opcoes
-        %span.icons.fui-time-24
-          = link_to 'Excluir', software, :method => :delete, :data => { :confirm => 'Você tem certeza?' }
+      %td
+        = link_to software, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_software_path(software), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to software, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
 
 %br
 

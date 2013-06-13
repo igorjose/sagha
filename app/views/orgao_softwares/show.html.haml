@@ -1,15 +1,27 @@
-%p#notice= notice
+%p.alert.alert-success= notice
 
-%p
-  %b Orgao:
-  = @orgao_software.orgao_id
-%p
-  %b Software:
-  = @orgao_software.software_id
-%p
-  %b Quantidade:
-  = @orgao_software.quantidade
+%h1 Visualizar software utilizado pelo órgão
 
-= link_to 'Edit', edit_orgao_software_path(@orgao_software)
-\|
-= link_to 'Back', orgao_softwares_path
+%table.table.table-hover
+  %tr
+    %td
+      %b Órgão:
+    %td
+      = @orgao_software.orgao_id
+  %tr
+    %td
+      %b Software:
+    %td
+      = @orgao_software.software_id
+  %tr
+    %td
+      %b Quantidade:
+    %td
+      = @orgao_software.quantidade
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_orgao_software_path(@orgao_software)
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', orgao_softwares_path
