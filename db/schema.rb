@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130612161525) do
+ActiveRecord::Schema.define(version: 20130613174113) do
+
+  create_table "cargos", force: true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "desktops", force: true do |t|
     t.integer  "qtd_funcionando"
@@ -41,11 +47,14 @@ ActiveRecord::Schema.define(version: 20130612161525) do
     t.string   "email_cooperativo"
     t.string   "email_pessoal"
     t.string   "tipo_contratacao"
+    t.string   "empresa"
     t.date     "vigencia_contrato"
     t.boolean  "pode_renovar"
+    t.string   "nivel_escolaridade"
     t.text     "mini_curriculo"
     t.text     "experiencia"
     t.text     "cursos"
+    t.text     "certificacoes"
     t.text     "conhecimentos_adicionais"
     t.text     "observacoes"
     t.datetime "created_at"

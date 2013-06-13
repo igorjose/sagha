@@ -50,3 +50,5 @@ h1 {color: #34495E !important;}
 .icons24 {font-size: 24px;}
 
 #informacao_pessoal_tipo_contratacao {margin-top: 8px;}
+
+.no-margin { margin-left: 0px !important; }

@@ -2,8 +2,9 @@
   = f.error_notification
 
   .inputs
-    = f.association :orgao, :required => true, input_html: {class: 'span3'}, label_method: :nome
-    = f.input :tipo, as: :select, collection: ['Matricial', 'Jato de Tinta', 'Laser', 'Plotter', 'Térmica'], input_html: {class: 'span3'}
+    %div{style: "display: block;"}
+      = f.association :orgao, :required => true, input_html: {class: 'span3 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}
+    = f.input :tipo, as: :select, collection: ['Matricial', 'Jato de Tinta', 'Laser', 'Plotter', 'Térmica'], input_html: {class: 'span3 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}
     = f.input :funcionando
     = f.input :defeituosas
     = f.input :detalhes_defeituosas
