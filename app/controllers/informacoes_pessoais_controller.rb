@@ -69,6 +69,6 @@ class InformacoesPessoaisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def informacao_pessoal_params
-      params.require(:informacao_pessoal).permit(:cargo_id, :nome, :telefone, :celular_cooperativo, :celular_pessoal, :email_cooperativo, :email_pessoal, :tipo_contratacao, :vigencia_contrato, :pode_renovar, :mini_curriculo, :experiencia, :cursos, :conhecimentos_adicionais, :observacoes)
+      params.require(:informacao_pessoal).permit(:cargo_id, :nome, :telefone, :celular_cooperativo, :celular_pessoal, :email_cooperativo, :email_pessoal, :tipo_contratacao, :empresa, :vigencia_contrato, :pode_renovar, :nivel_escolaridade, :mini_curriculo, :experiencia, :cursos, :certificacoes, :conhecimentos_adicionais, :observacoes)
     end
 end

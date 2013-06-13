@@ -45,6 +45,11 @@
       = @informacao_pessoal.tipo_contratacao
   %tr
     %td
+      %b Empresa:
+    %td
+      = @informacao_pessoal.empresa      
+  %tr
+    %td
       %b Vigência contrato:
     %td
       = @informacao_pessoal.vigencia_contrato
@@ -53,6 +58,11 @@
       %b Pode renovar:
     %td
       = @informacao_pessoal.pode_renovar
+  %tr
+    %td
+      %b Nível de escolaridade:
+    %td
+      = @informacao_pessoal.nivel_escolaridade        
   %tr
     %td
       %b Mini currículo:
@@ -67,7 +77,12 @@
     %td
       %b Cursos:
     %td
-      = @informacao_pessoal.cursos      
+      = @informacao_pessoal.cursos 
+  %tr
+    %td
+      %b Certificação:
+    %td
+      = @informacao_pessoal.certificacoes             
   %tr
     %td
       %b Conhecimentos adicionais:

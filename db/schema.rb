@@ -41,11 +41,14 @@ ActiveRecord::Schema.define(version: 20130611200201) do
     t.string   "email_cooperativo"
     t.string   "email_pessoal"
     t.string   "tipo_contratacao"
+    t.string   "empresa"
     t.date     "vigencia_contrato"
     t.boolean  "pode_renovar"
+    t.string   "nivel_escolaridade"
     t.text     "mini_curriculo"
     t.text     "experiencia"
     t.text     "cursos"
+    t.text     "certificacoes"
     t.text     "conhecimentos_adicionais"
     t.text     "observacoes"
     t.datetime "created_at"
@@ -85,8 +88,8 @@ ActiveRecord::Schema.define(version: 20130611200201) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -98,7 +101,6 @@ ActiveRecord::Schema.define(version: 20130611200201) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "orgao_id"
-    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
