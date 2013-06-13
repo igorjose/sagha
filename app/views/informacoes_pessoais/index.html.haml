@@ -13,7 +13,7 @@
   %tbody
   - @informacoes_pessoais.each do |informacao_pessoal|
     %tr
-      %td= informacao_pessoal.cargo_id
+      %td= informacao_pessoal.cargo.nome
       %td= informacao_pessoal.nome
       %td= informacao_pessoal.telefone
       %td= informacao_pessoal.email_cooperativo

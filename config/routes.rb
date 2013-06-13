@@ -1,4 +1,6 @@
 Sagha::Application.routes.draw do
+  resources :cargos
+
   resources :informacoes_pessoais
 
   resources :informacao_pessoals

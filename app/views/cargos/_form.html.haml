@@ -1,0 +1,8 @@
+= simple_form_for(@cargo) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :nome
+
+  .actions
+    = f.button :submit

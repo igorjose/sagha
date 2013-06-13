@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130611200201) do
+ActiveRecord::Schema.define(version: 20130613174113) do
+
+  create_table "cargos", force: true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "desktops", force: true do |t|
     t.integer  "qtd_funcionando"

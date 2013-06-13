@@ -2,7 +2,7 @@
   = f.error_notification
 
   .inputs
-    = f.input :cargo_id, placeholder: "Escolha uma profissão/cargo", label: 'Cargo exercido', input_html: { class: 'span6' }
+    = f.association :cargo, label_method: :nome, label: 'Cargo exercido', input_html: { class: 'span6' }, label_html: {style: "display: block;"}
     = f.input :nome, label: 'Nome', input_html: { class: 'span6' }
     = f.input :telefone, label: 'Telefone', input_html: { class: 'span6' }
     = f.input :celular_cooperativo, label: 'Celular coperativo', input_html: { class: 'span6' }
