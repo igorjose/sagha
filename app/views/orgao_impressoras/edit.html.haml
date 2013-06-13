@@ -1,7 +1,9 @@
-%h1 Editing orgao_impressora
+%h1 Editar registro de impressora
 
 = render 'form'
 
-= link_to 'Show', @orgao_impressora
-\|
-= link_to 'Back', orgao_impressoras_path
+.btn.btn-small.btn-inverse
+  = link_to 'Mostrar', @orgao_impressora
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', orgao_impressoras_path

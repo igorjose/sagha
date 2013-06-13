@@ -1,7 +1,9 @@
-%h1 Editing cargo
+%h1 Editar cargo
 
 = render 'form'
 
-= link_to 'Show', @cargo
-\|
-= link_to 'Back', cargos_path
+.btn.btn-small.btn-inverse
+  = link_to 'Mostrar', @cargo
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', cargos_path

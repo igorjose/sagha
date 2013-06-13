@@ -16,8 +16,10 @@
     = f.input :empresa, label: 'Se for terceirizado, qual empresa?', input_html: { class: 'span6' }
     = f.input :vigencia_contrato, label: 'Vigência do contrato', input_html: { class: 'span2' }
     %label.checkbox
-      %span
-        = f.input :pode_renovar, label: 'Pode renovar?'
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.input :pode_renovar, label: 'Pode renovar?'
     = f.input :nivel_escolaridade, placeholder: "Digite seu nível de escolaridade atual", label: 'Nível de escolaridade', input_html: { class: 'span6' }
     = f.input :mini_curriculo, placeholder: "Digite aqui seu mini currículo. Exemplo: Formação escolar, instituição, ano de conclusão.", label: 'Mini currículo', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
     = f.input :experiencia, placeholder: "Digite as suas experiências anteriores", label: 'Experiência', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
