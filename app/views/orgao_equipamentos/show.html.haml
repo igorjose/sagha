@@ -1,0 +1,58 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar equipamento selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Órgão:
+    %td
+      = @orgao_equipamento.orgao_id
+  %tr
+    %td
+      %b Equipamento:
+    %td
+      = @orgao_equipamento.equipamento_id
+  %tr
+    %td
+      %b Quantidade que estão funcionando:
+    %td
+      = @orgao_equipamento.qtd_funcionando
+  %tr
+    %td
+      %b Quantidade com defeito:
+    %td
+      = @orgao_equipamento.qtd_defeito
+  %tr
+    %td
+      %b Descricão de equipamentos com defeito:
+    %td
+      = @orgao_equipamento.descricao_defeito
+  %tr
+    %td
+      %b Quantidade de equipamentos reservas:
+    %td
+      = @orgao_equipamento.qtd_extra
+  %tr
+    %td
+      %b Quantidade de equipamentos emprestados:
+    %td
+      = @orgao_equipamento.qtd_emprestado
+  %tr
+    %td
+      %b Quantidade de equipamentos alugados:
+    %td
+      = @orgao_equipamento.qtd_alugado
+  %tr
+    %td
+      %b Quantidade que ainda estão com garantia:
+    %td  
+      = @orgao_equipamento.qtd_garantia
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_orgao_equipamento_path(@orgao_equipamento)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', orgao_equipamentos_path

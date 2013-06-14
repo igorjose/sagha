@@ -1,0 +1,8 @@
+= simple_form_for(@equipamento) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :nome, input_html: { class: 'span6' }
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar Equipamento'

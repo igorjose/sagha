@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  orgao_id: 1
+  equipamento_id: 1
+  qtd_funcionando: 1
+  qtd_defeito: 1
+  descricao_defeito: MyText
+  qtd_extra: 1
+  qtd_emprestado: 1
+  qtd_alugado: 1
+  qtd_garantia: 1
+
+two:
+  orgao_id: 1
+  equipamento_id: 1
+  qtd_funcionando: 1
+  qtd_defeito: 1
+  descricao_defeito: MyText
+  qtd_extra: 1
+  qtd_emprestado: 1
+  qtd_alugado: 1
+  qtd_garantia: 1
