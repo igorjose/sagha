@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130613174113) do
+ActiveRecord::Schema.define(version: 20130614164518) do
 
   create_table "cargos", force: true do |t|
     t.string   "nome"
@@ -38,6 +38,12 @@ ActiveRecord::Schema.define(version: 20130613174113) do
     t.integer  "orgao_id"
   end
 
+  create_table "equipamentos", force: true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "informacoes_pessoais", force: true do |t|
     t.integer  "cargo_id"
     t.string   "nome"
@@ -57,6 +63,20 @@ ActiveRecord::Schema.define(version: 20130613174113) do
     t.text     "certificacoes"
     t.text     "conhecimentos_adicionais"
     t.text     "observacoes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orgao_equipamentos", force: true do |t|
+    t.integer  "orgao_id"
+    t.integer  "equipamento_id"
+    t.integer  "qtd_funcionando"
+    t.integer  "qtd_defeito"
+    t.text     "descricao_defeito"
+    t.integer  "qtd_extra"
+    t.integer  "qtd_emprestado"
+    t.integer  "qtd_alugado"
+    t.integer  "qtd_garantia"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

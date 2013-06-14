@@ -10,7 +10,9 @@
    inflect.irregular 'orgao_software', 'orgao_softwares'
    inflect.irregular 'orgao_impressora', 'orgao_impressoras'
    inflect.irregular 'informacao_pessoal', 'informacoes_pessoais'
-   inflect.irregular 'cargo', 'cargos'  
+   inflect.irregular 'cargo', 'cargos'
+   inflect.irregular 'equipamento', 'equipamentos'
+   inflect.irregular 'orgao_equipamento', 'orgao_equipamentos'
 #   inflect.uncountable %w( fish sheep )
  end
 
