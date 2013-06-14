@@ -1,0 +1,27 @@
+%h1 Listar cargos
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Nome
+      %th
+      %th
+      %th
+  %tbody
+  - @cargos.each do |cargo|
+    %tr
+      %td= cargo.nome
+      %td
+        = link_to cargo, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_cargo_path(cargo), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to cargo, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Novo Cargo', new_cargo_path

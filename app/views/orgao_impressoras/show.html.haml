@@ -1,0 +1,87 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar impressora selecionada
+
+%table.table.table-hover
+
+  %tr
+    %td
+      %b Órgão:
+    %td
+      = @orgao_impressora.orgao_id
+  %tr
+    %td
+      %b Tipo:
+    %td
+      = @orgao_impressora.tipo
+  %tr
+    %td
+      %b Funcionando:
+    %td
+      = @orgao_impressora.funcionando
+  %tr
+    %td
+      %b Defeituosas:
+    %td
+      = @orgao_impressora.defeituosas
+  %tr
+    %td
+      %b Detalhes defeituosas:
+    %td
+      = @orgao_impressora.detalhes_defeituosas
+  %tr
+    %td
+      %b Extras:
+    %td
+      = @orgao_impressora.extras
+  %tr
+    %td
+      %b Emprestadas:
+    %td
+      = @orgao_impressora.emprestadas
+  %tr
+    %td
+      %b Detalhes emprestadas:
+    %td
+      = @orgao_impressora.detalhes_emprestadas
+  %tr
+    %td
+      %b Próprias:
+    %td
+      = @orgao_impressora.proprias
+  %tr
+    %td
+      %b Alugadas:
+    %td
+      = @orgao_impressora.alugadas
+  %tr
+    %td
+      %b Em garantia:
+    %td
+      = @orgao_impressora.em_garantia
+  %tr
+    %td
+      %b Tem contrato locação:
+    %td
+      = @orgao_impressora.tem_contrato_locacao
+  %tr
+    %td
+      %b Tem contrato manutenção:
+    %td
+      = @orgao_impressora.tem_contrato_manutencao
+  %tr
+    %td
+      %b Detalhes contrato manutenção:
+    %td
+      = @orgao_impressora.detalhes_contrato_manutencao
+  %tr
+    %td
+      %b Detalhes contrato locação:
+    %td
+      = @orgao_impressora.detalhes_contrato_locacao
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_orgao_impressora_path(@orgao_impressora)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', orgao_impressoras_path

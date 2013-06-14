@@ -1,0 +1,33 @@
+%h1 Listar Informações pessoais cadastradas
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Cargo
+      %th Nome
+      %th Telefone
+      %th Email cooperativo
+      %th
+      %th
+      %th
+  %tbody
+  - @informacoes_pessoais.each do |informacao_pessoal|
+    %tr
+      %td= informacao_pessoal.cargo.nome
+      %td= informacao_pessoal.nome
+      %td= informacao_pessoal.telefone
+      %td= informacao_pessoal.email_cooperativo
+      %td
+        = link_to informacao_pessoal, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_informacao_pessoal_path(informacao_pessoal), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to informacao_pessoal, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Nova Informação pessoal', new_informacao_pessoal_path

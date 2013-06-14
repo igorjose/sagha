@@ -1,0 +1,18 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar cargo selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Nome:
+    %td
+      = @cargo.nome
+
+%br      
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_cargo_path(@cargo)
+  
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', cargos_path

@@ -1,0 +1,35 @@
+%h1 Informações sobre impressoras
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Tipo
+      %th Funcionando
+      %th Defeituosas
+      %th Alugadas
+      %th Contrato Locação
+      %th
+      %th
+      %th
+  %tbody
+  - @orgao_impressoras.each do |orgao_impressora|
+    %tr
+      %td= orgao_impressora.tipo
+      %td= orgao_impressora.funcionando
+      %td= orgao_impressora.defeituosas
+      %td= orgao_impressora.alugadas
+      %td= orgao_impressora.tem_contrato_locacao
+      %td
+        = link_to orgao_impressora, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_orgao_impressora_path(orgao_impressora), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to orgao_impressora, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Novo registro', new_orgao_impressora_path

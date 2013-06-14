@@ -1,0 +1,27 @@
+%h1 Listar equipamentos cadastrados
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Nome
+      %th
+      %th
+      %th
+  %tbody
+  - @equipamentos.each do |equipamento|
+    %tr
+      %td= equipamento.nome
+      %td
+        = link_to equipamento, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_equipamento_path(equipamento), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to equipamento, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Novo Equipamento', new_equipamento_path

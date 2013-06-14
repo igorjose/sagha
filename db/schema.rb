@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130611195257) do
+ActiveRecord::Schema.define(version: 20130614164518) do
+
+  create_table "cargos", force: true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "desktops", force: true do |t|
     t.integer  "qtd_funcionando"
@@ -31,6 +37,71 @@ ActiveRecord::Schema.define(version: 20130611195257) do
     t.datetime "updated_at"
     t.integer  "orgao_id"
   end
+
+  create_table "equipamentos", force: true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "informacoes_pessoais", force: true do |t|
+    t.integer  "cargo_id"
+    t.string   "nome"
+    t.string   "telefone"
+    t.string   "celular_cooperativo"
+    t.string   "celular_pessoal"
+    t.string   "email_cooperativo"
+    t.string   "email_pessoal"
+    t.string   "tipo_contratacao"
+    t.string   "empresa"
+    t.date     "vigencia_contrato"
+    t.boolean  "pode_renovar"
+    t.string   "nivel_escolaridade"
+    t.text     "mini_curriculo"
+    t.text     "experiencia"
+    t.text     "cursos"
+    t.text     "certificacoes"
+    t.text     "conhecimentos_adicionais"
+    t.text     "observacoes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orgao_equipamentos", force: true do |t|
+    t.integer  "orgao_id"
+    t.integer  "equipamento_id"
+    t.integer  "qtd_funcionando"
+    t.integer  "qtd_defeito"
+    t.text     "descricao_defeito"
+    t.integer  "qtd_extra"
+    t.integer  "qtd_emprestado"
+    t.integer  "qtd_alugado"
+    t.integer  "qtd_garantia"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orgao_impressoras", force: true do |t|
+    t.integer  "orgao_id"
+    t.string   "tipo"
+    t.integer  "funcionando"
+    t.integer  "defeituosas"
+    t.text     "detalhes_defeituosas"
+    t.integer  "extras"
+    t.integer  "emprestadas"
+    t.text     "detalhes_emprestadas"
+    t.integer  "proprias"
+    t.integer  "alugadas"
+    t.integer  "em_garantia"
+    t.boolean  "tem_contrato_locacao"
+    t.boolean  "tem_contrato_manutencao"
+    t.text     "detalhes_contrato_manutencao"
+    t.text     "detalhes_contrato_locacao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orgao_impressoras", ["orgao_id", "tipo"], name: "index_orgao_impressoras_on_orgao_id_and_tipo", unique: true
 
   create_table "orgao_softwares", force: true do |t|
     t.integer  "orgao_id"

@@ -1,29 +1,31 @@
 %h1 Lista de Softwares utilizados pelo órgão
 
 %table.table.table-hover
-  %tr
-    %th Orgao
-    %th Software
-    %th Quantidade
-    %th
-    %th
-    %th
-
+  %thead
+    %tr
+      %th Órgão
+      %th Software
+      %th Quantidade
+      %th
+      %th
+      %th
+  %tbody
   - @orgao_softwares.each do |orgao_software|
     %tr
-      %td= orgao_software.orgao_id
-      %td= orgao_software.software_id
+      %td= orgao_software.orgao.nome
+      %td= orgao_software.software.nome
       %td= orgao_software.quantidade
       %td
-        = link_to orgao_software do
-          %span.fui-eye{style: 'font-size: 24px'}
+        = link_to orgao_software, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
       %td
-        = link_to edit_orgao_software_path(orgao_software) do
-          %span.icons.fui-new
+        = link_to edit_orgao_software_path(orgao_software), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
       %td 
-        = link_to orgao_software, :method => :delete, :data => { :confirm => 'Are you sure?' } do
-          %span.icons.fui-cross
+        = link_to orgao_software, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
 
 %br
 
-= link_to 'New Orgao software', new_orgao_software_path
+.btn.btn-small.btn-inverse
+  = link_to 'Criar novo', new_orgao_software_path

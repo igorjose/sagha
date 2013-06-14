@@ -5,9 +5,9 @@
     %tr
       %th Nome
       %th Tipo
-      %th Vinculo
+      %th Vínculo
       %th Telefone
-      %th Secretario
+      %th Secretário
   %tbody  
   - @orgaos.each do |orgao|
     %tr
@@ -16,12 +16,15 @@
       %td= orgao.vinculo
       %td= orgao.telefone
       %td= orgao.secretario
-      %td.opcoes
-        = link_to 'Mostrar', orgao
-      %td.opcoes
-        = link_to 'Editar', edit_orgao_path(orgao)
-      %td.opcoes
-        = link_to 'Excluir', orgao, :method => :delete, :data => { :confirm => 'Você tem certeza?' }
+      %td
+        = link_to orgao, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_orgao_path(orgao), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to orgao, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
 
 %br
 

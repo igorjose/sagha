@@ -29,9 +29,9 @@ body {background-color: #f1f1f1;}
 .row {margin-top: 20px;}
 
 .nav-list {margin-top: 20px;}
-
+/*
 .opcoes {width: 25px;}
-
+*/
 .alert {margin: 8px 0 8px 0;}
 
 .btn-inverse a {color: #fff !important; text-decoration: none;}
@@ -39,10 +39,16 @@ body {background-color: #f1f1f1;}
 .btn-inverse a:hover { background-color: #415B76 !important;}
 
 h1 {color: #34495E !important;}
-
+.login-list {margin-top: 6px; font-size: 14px;}
 .login-list a {font-size: 13px; color:#fff !important; text-decoration: none !important; padding-left:5px;}
 .login-list a:hover {text-decoration: underline !important;}
 
 .formulario-login {width: 360px; height: 350px; border: 1px solid #E5E5E5; padding: 20px; margin:0 auto; margin-top: 20px;}
 
 .input-textarea {width: 435px;}
+
+.icons24 {font-size: 24px;}
+
+#informacao_pessoal_tipo_contratacao {margin-top: 8px;}
+
+.no-margin { margin-left: 0px !important; }

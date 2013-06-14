@@ -1,0 +1,36 @@
+= simple_form_for(@orgao_impressora) do |f|
+  = f.error_notification
+
+  .inputs
+    %div{style: "display: block;"}
+      = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão'
+    = f.input :tipo, as: :select, collection: ['Matricial', 'Jato de Tinta', 'Laser', 'Plotter', 'Térmica'], input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}
+    = f.input :funcionando, input_html: { class: 'span6' }
+    = f.input :defeituosas, input_html: { class: 'span6' }
+    = f.input :detalhes_defeituosas, placeholder: "Descreva os detalhes das peças defeituosas", :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+    = f.input :extras, input_html: { class: 'span6' }
+    = f.input :emprestadas, input_html: { class: 'span6' }
+    = f.input :detalhes_emprestadas, placeholder: "Descreva os detalhes das peças emprestadas", :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+    = f.input :proprias, input_html: { class: 'span6' }, label: 'Próprias'
+    = f.input :alugadas, input_html: { class: 'span6' }
+    = f.input :em_garantia, input_html: { class: 'span6' }
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.check_box :tem_contrato_locacao, data: {toggle: 'checkbox'}
+      tem contrato de locação?
+    = f.input :detalhes_contrato_locacao, placeholder: "Detalhes sobre o contrato de locação", label: 'Detalhes do contrato de locação', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.check_box :tem_contrato_manutencao, data: {toggle: 'checkbox'}
+      tem contrato de manutenção?
+
+    = f.input :detalhes_contrato_manutencao, placeholder: "Detalhes sobre o contrato de manutenção", label: 'Detalhes do contrato de manutenção', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar impressoras'
+

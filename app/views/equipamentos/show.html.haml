@@ -1,0 +1,18 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar equipamento selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Nome:
+    %td
+      = @equipamento.nome
+
+%br      
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_equipamento_path(@equipamento)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', equipamentos_path
