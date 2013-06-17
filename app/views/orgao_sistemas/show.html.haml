@@ -1,0 +1,38 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Órgão:
+    %td
+      = @orgao_sistema.orgao.nome
+  %tr
+    %td
+      %b Sistema:
+    %td
+      = @orgao_sistema.sistema.nome
+  %tr
+    %td
+      %b Nível de implantação:
+    %td
+      = @orgao_sistema.nivel_implantacao
+  %tr
+    %td
+      %b Quantidade de pessoas que acessam o sistema apenas para consulta:
+    %td
+      = @orgao_sistema.qtd_consulta
+  %tr
+    %td
+      %b Quantidade de pessoas que acessam o sistema fazendo cadastros/alterações:
+    %td
+      = @orgao_sistema.qtd_cadastro
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_orgao_sistema_path(@orgao_sistema)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', orgao_sistemas_path

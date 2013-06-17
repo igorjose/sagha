@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  orgao_id: 1
+  sistemas_id: 1
+  nivel_implantacao: MyString
+  qtd_consulta: 1
+  qtd_cadastro: 1
+
+two:
+  orgao_id: 1
+  sistemas_id: 1
+  nivel_implantacao: MyString
+  qtd_consulta: 1
+  qtd_cadastro: 1

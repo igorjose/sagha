@@ -1,0 +1,27 @@
+%h1 Listar sistemas cadastrados
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Nome
+      %th
+      %th
+      %th
+  %tbody
+  - @sistemas.each do |sistema|
+    %tr
+      %td= sistema.nome
+      %td
+        = link_to sistema, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_sistema_path(sistema), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to sistema, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}      
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Novo Sistema', new_sistema_path

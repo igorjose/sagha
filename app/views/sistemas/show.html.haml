@@ -1,0 +1,18 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar sistema selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Nome:
+    %td
+      = @sistema.nome
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Edit', edit_sistema_path(@sistema)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Back', sistemas_path

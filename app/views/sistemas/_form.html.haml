@@ -1,0 +1,9 @@
+= simple_form_for(@sistema) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :nome, label: 'Nome do sistema', input_html: { class: 'span6' }
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar Sistema'
+

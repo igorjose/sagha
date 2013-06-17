@@ -28,7 +28,7 @@ class OrgaoImpressorasController < ApplicationController
 
     respond_to do |format|
       if @orgao_impressora.save
-        format.html { redirect_to @orgao_impressora, notice: 'Orgao impressora was successfully created.' }
+        format.html { redirect_to @orgao_impressora, notice: 'Órgão impressora criado com sucesso.' }
         format.json { render action: 'show', status: :created, location: @orgao_impressora }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class OrgaoImpressorasController < ApplicationController
   def update
     respond_to do |format|
       if @orgao_impressora.update(orgao_impressora_params)
-        format.html { redirect_to @orgao_impressora, notice: 'Orgao impressora was successfully updated.' }
+        format.html { redirect_to @orgao_impressora, notice: 'Órgão impressora atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

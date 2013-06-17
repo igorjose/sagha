@@ -13,6 +13,7 @@
    inflect.irregular 'cargo', 'cargos'
    inflect.irregular 'equipamento', 'equipamentos'
    inflect.irregular 'orgao_equipamento', 'orgao_equipamentos'
+   inflect.irregular 'orgao_sistema', 'orgao_sistemas'
 #   inflect.uncountable %w( fish sheep )
  end
 

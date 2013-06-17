@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130614164518) do
+ActiveRecord::Schema.define(version: 20130617143448) do
 
   create_table "cargos", force: true do |t|
     t.string   "nome"
@@ -103,6 +103,16 @@ ActiveRecord::Schema.define(version: 20130614164518) do
 
   add_index "orgao_impressoras", ["orgao_id", "tipo"], name: "index_orgao_impressoras_on_orgao_id_and_tipo", unique: true
 
+  create_table "orgao_sistemas", force: true do |t|
+    t.integer  "orgao_id"
+    t.string   "nivel_implantacao"
+    t.integer  "qtd_consulta"
+    t.integer  "qtd_cadastro"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sistema_id"
+  end
+
   create_table "orgao_softwares", force: true do |t|
     t.integer  "orgao_id"
     t.integer  "software_id"
@@ -125,6 +135,12 @@ ActiveRecord::Schema.define(version: 20130614164518) do
     t.string   "telefone_secretaria"
     t.string   "email_secretaria"
     t.string   "atribuicoes_orgao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sistemas", force: true do |t|
+    t.string   "nome"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

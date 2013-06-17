@@ -1,0 +1,15 @@
+= simple_form_for(@orgao_sistema) do |f|
+  = f.error_notification
+
+  .inputs
+    %div{style: "display: block;"}
+      = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: "Órgão"
+    %div{style: "display: block;"}
+      = f.association :sistema, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}
+    %div{style: "display: block;"}
+      = f.input :nivel_implantacao, as: :select, collection: ['Implantado', 'Em fase de implantação', 'Não implantado'], input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}, label: "Nível de implantação"
+    = f.input :qtd_consulta, input_html: { class: 'span6' }, label: 'Quantidade de pessoas que acessam o sistema apenas para consulta'
+    = f.input :qtd_cadastro, input_html: { class: 'span6' }, label: 'Quantidade de pessoas que acessam o sistema fazendo cadastros/alterações'
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar novo'
