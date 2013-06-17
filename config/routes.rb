@@ -1,4 +1,6 @@
 Sagha::Application.routes.draw do
+  resources :orgao_sistemas_proprios
+
   resources :orgao_sistemas
 
   resources :sistemas

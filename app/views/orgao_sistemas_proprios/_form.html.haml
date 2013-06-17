@@ -1,0 +1,68 @@
+= simple_form_for(@orgao_sistema_proprio) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :nome, input_html: { class: 'span6' }, label: "Nome do sistema"
+    = f.input :descricao, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: "Descrição", placeholder: "Descrição do sistema"
+    = f.input :desenvolvedor, input_html: { class: 'span6' }
+    = f.input :manutencao, input_html: { class: 'span6' }, label: "Manutenção", placeholder: "Nome da empresa"
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.input :cod_fonte, label: 'Possui código fonte?'
+    = f.input :descricao_cod_fonte, label: "Se não possui, justifique.", :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+    = f.input :lugar_hospedado, input_html: { class: 'span6' }, placeholder: "Se for EXTERNO, colocar valor da hospedagem + vigência do contrato"
+    = f.input :nr_usuario, input_html: { class: 'span6' }, label: "Número de usuário que acessam o sistema somente para consulta"
+    = f.input :linguagem, input_html: { class: 'span6' }, label: "Linguagem utilizada"
+    = f.input :banco, input_html: { class: 'span6' }, label: "Banco de Dados"
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked    
+      = f.input :tem_licenca, label: "Possui licença?"
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked    
+      = f.input :terceiros_acessando, label: "Existem terceiros acessando o banco?"
+    = f.input :responsavel_banco, input_html: { class: 'span6' }, label: "Responsável pelo Banco de Dados"
+    = f.input :nivel_confidencialidade, input_html: { class: 'span6' }, label: "Nível de confidencialidade e disponiblidade"
+    = f.input :nivel_integracao, input_html: { class: 'span6' }, label: "Nível de integração com outros sistemas"
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked    
+      = f.input :existe_padroes, label: "Existem padrões de desenvolvimento com gerencimaneto de mudanças e de configurações?"
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked    
+      = f.input :existe_ambiente_homologacao, label: "Existe ambiente de Homologação / Teste / Treinamento?"
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked    
+      = f.input :existe_backup_diferenciado, label: "Existe necessidade de Política de Backup diferenciada?"
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked    
+      = f.input :existe_backup, label: "Existe Política de Backup?"
+    = f.input :descricao_backup, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: "Se sim,  faça uma breve descrição."
+    = f.input :linguagem_banco, input_html: { class: 'span6' }, label: "Linguagem utilizada pelo Banco de Dados"
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked      
+      = f.input :possui_documentos, label: "Possui documentos de análise?"
+    = f.input :descricao_documentos, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: "Se não, justifique."
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked      
+      = f.input :possui_manual, label: "Possui Manual (data/versão)?"
+    = f.input :descricao_manual, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: "Se não, justifique."
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar'

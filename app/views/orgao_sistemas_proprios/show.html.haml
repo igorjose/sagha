@@ -1,0 +1,138 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Nome:
+    %td
+      = @orgao_sistema_proprio.nome
+  %tr
+    %td
+      %b Descrição:
+    %td
+      = @orgao_sistema_proprio.descricao
+  %tr   
+    %td
+      %b Desenvolvedor:
+    %td  
+      = @orgao_sistema_proprio.desenvolvedor
+  %tr
+    %td
+      %b Manutenção:
+    %td
+      = @orgao_sistema_proprio.manutencao
+  %tr
+    %td
+      %b Código fonte:
+    %td
+      = @orgao_sistema_proprio.cod_fonte
+  %tr
+    %td
+      %b Descrição código fonte:
+    %td
+      = @orgao_sistema_proprio.descricao_cod_fonte
+  %tr
+    %td
+      %b Lugar hospedado:
+    %td
+      = @orgao_sistema_proprio.lugar_hospedado
+  %tr
+    %td
+      %b Número de usuário que acessam o sistema somente para consulta:
+    %td
+      = @orgao_sistema_proprio.nr_usuario
+  %tr
+    %td
+      %b Linguagem utilizada:
+    %td
+      = @orgao_sistema_proprio.linguagem
+  %tr
+    %td
+      %b Banco de Dados:
+    %td
+      = @orgao_sistema_proprio.banco
+  %tr
+    %td
+      %b Tem licenca:
+    %td
+      = @orgao_sistema_proprio.tem_licenca
+  %tr
+    %td
+      %b Terceiros acessando o Banco:
+    %td
+      = @orgao_sistema_proprio.terceiros_acessando
+  %tr
+    %td
+      %b Responsável pelo Banco de Dados:
+    %td
+      = @orgao_sistema_proprio.responsavel_banco
+  %tr
+    %td
+      %b Nível de confidencialidade:
+    %td
+      = @orgao_sistema_proprio.nivel_confidencialidade
+  %tr
+    %td
+      %b Nível integração:
+    %td
+      = @orgao_sistema_proprio.nivel_integracao
+  %tr
+    %td
+      %b Existe padrões:
+    %td
+      = @orgao_sistema_proprio.existe_padroes
+  %tr
+    %td
+      %b Existe ambiente homologação:
+    %td
+      = @orgao_sistema_proprio.existe_ambiente_homologacao
+  %tr
+    %td
+      %b Existe backup diferenciado:
+    %td
+      = @orgao_sistema_proprio.existe_backup_diferenciado
+  %tr
+    %td
+      %b Existe backup:
+    %td
+      = @orgao_sistema_proprio.existe_backup
+  %tr
+    %td
+      %b Descrição backup:
+    %td
+      = @orgao_sistema_proprio.descricao_backup
+  %tr
+    %td
+      %b Linguagem utilizada pelo Banco de Dados:
+    %td
+      = @orgao_sistema_proprio.linguagem_banco
+  %tr
+    %td
+      %b Possui documentos:
+    %td
+      = @orgao_sistema_proprio.possui_documentos
+  %tr
+    %td
+      %b Descrição documentos:
+    %td
+      = @orgao_sistema_proprio.descricao_documentos
+  %tr
+    %td
+      %b Possui manual:
+    %td
+      = @orgao_sistema_proprio.possui_manual
+  %tr
+    %td
+      %b Descrição manual:
+    %td
+      = @orgao_sistema_proprio.descricao_manual
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_orgao_sistema_proprio_path(@orgao_sistema_proprio)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', orgao_sistemas_proprios_path

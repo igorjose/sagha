@@ -47,15 +47,20 @@
                       = link_to 'Informações pessoais', informacoes_pessoais_path
                 - if current_user.admin
                   %li
-                    = link_to 'Softwares', softwares_path
-                  %li
-                    = link_to 'Órgãos', orgaos_path
-                  %li
-                    = link_to 'Cargos', cargos_path
-                  %li
-                    = link_to 'Equipamentos', equipamentos_path
-                  %li
-                    = link_to 'Sistemas', sistemas_path
+                    = link_to 'Admin', '#'
+                    %ul
+                      %li
+                        = link_to 'Softwares', softwares_path
+                      %li
+                        = link_to 'Órgãos', orgaos_path
+                      %li
+                        = link_to 'Cargos', cargos_path
+                      %li
+                        = link_to 'Equipamentos', equipamentos_path
+                      %li
+                        = link_to 'Sistemas', sistemas_path
+                      %li
+                        = link_to 'Sistemas próprios', orgao_sistemas_proprios_path  
 
     .container
 

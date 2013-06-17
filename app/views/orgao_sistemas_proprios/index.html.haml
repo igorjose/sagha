@@ -1,0 +1,33 @@
+%h1 Listar sistemas próprios
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Nome
+      %th Descrição
+      %th Desenvolvedor
+      %th Manutenção
+      %th
+      %th
+      %th
+  %tbody
+  - @orgao_sistemas_proprios.each do |orgao_sistema_proprio|
+    %tr
+      %td= orgao_sistema_proprio.nome
+      %td= orgao_sistema_proprio.descricao
+      %td= orgao_sistema_proprio.desenvolvedor
+      %td= orgao_sistema_proprio.manutencao
+      %td
+        = link_to orgao_sistema_proprio, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_orgao_sistema_proprio_path(orgao_sistema_proprio), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to orgao_sistema_proprio, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Novo sistema próprio', new_orgao_sistema_proprio_path
