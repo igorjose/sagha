@@ -28,7 +28,7 @@ class OrgaoEquipamentosController < ApplicationController
 
     respond_to do |format|
       if @orgao_equipamento.save
-        format.html { redirect_to @orgao_equipamento, notice: 'Orgao equipamento was successfully created.' }
+        format.html { redirect_to @orgao_equipamento, notice: 'Órgão equipamento criado com sucesso.' }
         format.json { render action: 'show', status: :created, location: @orgao_equipamento }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class OrgaoEquipamentosController < ApplicationController
   def update
     respond_to do |format|
       if @orgao_equipamento.update(orgao_equipamento_params)
-        format.html { redirect_to @orgao_equipamento, notice: 'Orgao equipamento was successfully updated.' }
+        format.html { redirect_to @orgao_equipamento, notice: 'Órgão equipamento atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

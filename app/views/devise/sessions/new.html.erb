@@ -8,7 +8,14 @@
 	  <div class="form-signin">
 	    <%= f.input :email, :required => false, :autofocus => true, :placeholder => "Digite seu email", :input_html=>{:class=>'input-block-level'} %>
 	    <%= f.input :password, :required => false, :placeholder => "Digite sua senha", :input_html=>{:class=>'input-block-level'} %>
-	    <%= f.input :remember_me, label: 'Lembrar', :input_html=>{:class=>'checkbox'}, :as => :boolean if devise_mapping.rememberable? %>
+	 
+     <label class="checkbox">
+     	<span class="icons">
+     		<span class="first-icon fui-checkbox-unchecked"></span>
+     		<span class="second-icon fui-checkbox-checked"></span>
+     	</span>
+     	<%= f.input :remember_me, label: 'Lembrar', :input_html=>{:class=>'checkbox'}, :as => :boolean if devise_mapping.rememberable? %>
+     </label>
 	  </div>
 
 	    <%= f.button :submit, "Login", :class => 'btn btn-large btn-primary' %>

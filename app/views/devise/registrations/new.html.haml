@@ -1,11 +1,14 @@
-%h2 Sign up
+%h2 Cadastrar novo usuário
 = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = f.error_notification
   .form-inputs
-    = f.input :email, :required => true, :autofocus => true
-    = f.association :orgao, :required => true, input_html: {class: 'select-block'}, label_method: :nome
-    = f.input :password, :required => true
-    = f.input :password_confirmation, :required => true
+    = f.input :email, :required => true, :autofocus => true, input_html: { class: 'span6' }
+
+    = f.association :orgao, :required => true, input_html: {class: 'select-block'}, label_method: :nome, :label => "Órgão", input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}
+    = f.input :password, :required => true, :label => "Senha", input_html: { class: 'span6' }
+
+    = f.input :password_confirmation, :required => true, :label => "Confirme sua senha", input_html: { class: 'span6' }
+
   .form-actions
-    = f.button :submit, "Sign up"
+    = f.button :submit, "Cadastrar", class: 'btn btn-success'
 = render "devise/shared/links"

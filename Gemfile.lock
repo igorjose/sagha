@@ -140,7 +140,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-rails (~> 4.0.0)
   devise (~> 3.0.0.rc)
   haml-rails
   jbuilder (~> 1.0.1)

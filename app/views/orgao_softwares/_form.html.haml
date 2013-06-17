@@ -2,9 +2,11 @@
   = f.error_notification
 
   .inputs
-    = f.association :orgao, :required => true, input_html: {class: 'select-block'}, label_method: :nome
-    = f.association :software, :required => true, input_html: {class: 'select-block'}, label_method: :nome
-    = f.input :quantidade
+    %div{style: "display: block;"}
+      = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão'
+    %div{style: "display: block;"}  
+      = f.association :software, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}
+    = f.input :quantidade, input_html: { class: 'span6' }
 
   .actions
     = f.button :submit, class: 'btn btn-success', value: 'Cadastrar novo'

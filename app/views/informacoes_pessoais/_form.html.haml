@@ -2,7 +2,8 @@
   = f.error_notification
 
   .inputs
-    = f.association :cargo, label_method: :nome, label: 'Cargo exercido', input_html: { class: 'span6' }, label_html: {style: "display: block;"}
+    %div{style: "display: block;"}
+      = f.association :cargo, label_method: :nome, label: 'Cargo exercido', input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}
     = f.input :nome, label: 'Nome', input_html: { class: 'span6' }
     = f.input :telefone, label: 'Telefone', input_html: { class: 'span6' }
     = f.input :celular_cooperativo, label: 'Celular coperativo', input_html: { class: 'span6' }
