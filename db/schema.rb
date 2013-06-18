@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130618172608) do
+ActiveRecord::Schema.define(version: 20130618183831) do
 
   create_table "cargos", force: true do |t|
     t.string   "nome"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 20130618172608) do
 
   create_table "equipamentos", force: true do |t|
     t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "informacoes_ged", force: true do |t|
+    t.boolean  "processo_digitalizacao"
+    t.integer  "numero_digitalizacao"
+    t.boolean  "documentos_indexados"
+    t.boolean  "hospedado_sepog"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

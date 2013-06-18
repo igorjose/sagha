@@ -1,0 +1,33 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar informação sobre o GED
+
+%table.table.table-hover
+  %tr
+    %td
+      %b O Órgão possui algum processo de Digitalização dos documentos?
+    %td
+      = @informacao_ged.processo_digitalizacao
+  %tr
+    %td
+      %b Qual a % de documentos digitalizados do Órgão?
+    %td
+      = @informacao_ged.numero_digitalizacao
+  %tr
+    %td
+      %b Os documentos digitalizados estão devidamente indexados?
+    %td
+      = @informacao_ged.documentos_indexados
+  %tr
+    %td
+      %b Os arquivos digitalizados foram hospedados no Servidor da SEPOG (antiga SAM)?
+    %td
+      = @informacao_ged.hospedado_sepog
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_informacao_ged_path(@informacao_ged)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', informacoes_ged_path

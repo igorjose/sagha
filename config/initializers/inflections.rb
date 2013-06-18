@@ -16,6 +16,7 @@
    inflect.irregular 'orgao_sistema', 'orgao_sistemas'
    inflect.irregular 'orgao_sistema_proprio', 'orgao_sistemas_proprios'
    inflect.irregular 'servidor', 'servidores'
+   inflect.irregular 'informacao_ged', 'informacoes_ged'
 #   inflect.uncountable %w( fish sheep )
  end
 

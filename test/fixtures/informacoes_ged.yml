@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  processo_digitalizacao: false
+  numero_digitalizacao: 1
+  documentos_indexados: false
+  hospedado_sepog: false
+
+two:
+  processo_digitalizacao: false
+  numero_digitalizacao: 1
+  documentos_indexados: false
+  hospedado_sepog: false
