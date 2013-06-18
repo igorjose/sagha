@@ -1,0 +1,67 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar servidor selecionada
+
+%table.table.table-hover
+
+  %tr
+    %td
+      %b Modelo:
+    %td
+      = @servidor.modelo
+  %tr
+    %td
+      %b Fabricante:
+    %td
+      = @servidor.fabricante
+  %tr
+    %td
+      %b Sistema operacional:
+    %td
+      = @servidor.sistema_operacional
+  %tr
+    %td
+      %b Arquitetura:
+    %td
+      = @servidor.arquitetura
+  %tr
+    %td
+      %b Dominio:
+    %td
+      = @servidor.dominio
+  %tr
+    %td
+      %b Processador:
+    %td
+      = @servidor.processador
+  %tr
+    %td
+      %b Ram:
+    %td
+      = @servidor.ram
+  %tr
+    %td
+      %b Hd:
+    %td
+      = @servidor.hd
+  %tr
+    %td
+      %b Hostname:
+    %td
+      = @servidor.hostname
+  %tr
+    %td
+      %b Descricao:
+    %td
+      = @servidor.descricao
+  %tr
+    %td
+      %b Servicos:
+    %td
+      = @servidor.servicos
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_servidor_path(@servidor)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', servidores_path

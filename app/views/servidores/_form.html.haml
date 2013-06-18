@@ -1,0 +1,18 @@
+= simple_form_for(@servidor) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :modelo, input_html: { class: 'span6' }
+    = f.input :fabricante, input_html: { class: 'span6' }
+    = f.input :sistema_operacional, input_html: { class: 'span6' }
+    = f.input :arquitetura, input_html: { class: 'span6' }, as: :select, collection: ['32 bits', '64 bits'], input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}
+    = f.input :dominio, input_html: { class: 'span6' }, label: "Domínio"
+    = f.input :processador, input_html: { class: 'span6' }
+    = f.input :ram, input_html: { class: 'span6' }, label: "Memória RAM"
+    = f.input :hd, input_html: { class: 'span6' }, label: "HD"
+    = f.input :hostname, input_html: { class: 'span6' }
+    = f.input :descricao, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: "Descrição", placeholder: "Digite o Ip, Máscara, Gateway"
+    = f.input :servicos, as: :select, collection: ['Rack', 'Torre', 'Blade'], input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}, label: "Serviços"
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar servidores'

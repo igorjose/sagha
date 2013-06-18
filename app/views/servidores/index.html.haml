@@ -1,0 +1,31 @@
+%h1 Listar informações sobre servidores
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Modelo
+      %th Fabricante
+      %th Sistema operacional
+      %th
+      %th
+      %th
+  %tbody
+  - @servidores.each do |servidor|
+    %tr
+      %td= servidor.modelo
+      %td= servidor.fabricante
+      %td= servidor.sistema_operacional
+      %td
+        = link_to servidor, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_servidor_path(servidor), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to servidor, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Novo Servidor', new_servidor_path
