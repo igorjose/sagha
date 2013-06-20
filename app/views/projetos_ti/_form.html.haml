@@ -1,0 +1,15 @@
+= simple_form_for(@projeto_ti) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :nome_projeto, label: "Nome do projeto", input_html: { class: 'span6' }
+    = f.input :descricao, as: :text, placeholder: "Digite aqui a descrição do projeto", label: 'Descrição', :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+    = f.input :gerente_projeto, label: "Gerente do projeto", input_html: { class: 'span6' }
+    = f.input :coordenador_tecnico, label: "Coodenador Técnico", input_html: { class: 'span6' }
+    = f.input :valor, label: "Valor", input_html: { class: 'span6' }
+    = f.input :prazo, label: "Prazo", input_html: { class: 'span6' }
+    = f.input :previsto_orcamento, label: "Previsto no orçamento de 2013?"
+    = f.input :observacao, label: "Observação", :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar projeto'

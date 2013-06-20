@@ -1,0 +1,53 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar projeto selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Nome do projeto:
+    %td
+      = @projeto_ti.nome_projeto
+  %tr
+    %td
+      %b Descrição:
+    %td
+      = @projeto_ti.descricao
+  %tr
+    %td
+      %b Gerente do projeto:
+    %td
+      = @projeto_ti.gerente_projeto
+  %tr
+    %td
+      %b Coordenador técnico:
+    %td
+      = @projeto_ti.coordenador_tecnico
+  %tr
+    %td
+      %b Valor:
+    %td
+      = @projeto_ti.valor
+  %tr
+    %td
+      %b Prazo:
+    %td
+      = @projeto_ti.prazo
+  %tr
+    %td
+      %b Previsto no orçamento de 2013:
+    %td
+      = @projeto_ti.previsto_orcamento
+  %tr
+    %td
+      %b Observação:
+    %td
+      = @projeto_ti.observacao
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_projeto_ti_path(@projeto_ti)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', projetos_ti_path
