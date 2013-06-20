@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome_projeto: MyString
+  descricao: MyText
+  gerente_projeto: MyString
+  coordenador_tecnico: MyString
+  valor: MyString
+  prazo: MyString
+  previsto_orcamento: false
+  observacao: MyText
+
+two:
+  nome_projeto: MyString
+  descricao: MyText
+  gerente_projeto: MyString
+  coordenador_tecnico: MyString
+  valor: MyString
+  prazo: MyString
+  previsto_orcamento: false
+  observacao: MyText
