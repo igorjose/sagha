@@ -13,6 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20130618183831) do
 
+  create_table "cargos", force: true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "desktops", force: true do |t|
     t.integer  "qtd_funcionando"
     t.integer  "qtd_extra"
