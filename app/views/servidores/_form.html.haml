@@ -12,7 +12,7 @@
     = f.input :hd, input_html: { class: 'span6' }, label: "HD"
     = f.input :hostname, input_html: { class: 'span6' }
     = f.input :descricao, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: "Descrição", placeholder: "Digite o Ip, Máscara, Gateway"
-    = f.input :servicos, as: :select, collection: ['Rack', 'Torre', 'Blade'], input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}, label: "Serviços"
+    = f.input :servicos, as: :select, collection: ['Rack', 'Torre', 'Blade'], input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}, label: "Serviços", prompt: "Selecione"
 
   .actions
     = f.button :submit, class: 'btn btn-success', value: 'Cadastrar servidores'

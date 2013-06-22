@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  recursos_suficientes: false
+  justificar_recursos: MyText
+  grau_satisfacao: MyString
+  principais_necessidades: MyText
+  duvidas_levantamento: MyText
+
+two:
+  recursos_suficientes: false
+  justificar_recursos: MyText
+  grau_satisfacao: MyString
+  principais_necessidades: MyText
+  duvidas_levantamento: MyText

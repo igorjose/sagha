@@ -1,0 +1,18 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar orçamento de TI selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Orcamento ti:
+    %td
+      = @orcamento_ti.orcamento_ti
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_orcamento_ti_path(@orcamento_ti)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', orcamentos_ti_path

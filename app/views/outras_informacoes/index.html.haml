@@ -1,0 +1,29 @@
+%h1 Listar outras informações
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Os recursos são suficientes
+      %th Grau de satisfação
+      %th
+      %th
+      %th
+  %tbody
+  - @outras_informacoes.each do |outra_informacao|
+    %tr
+      %td= outra_informacao.recursos_suficientes
+      %td= outra_informacao.grau_satisfacao
+      %td
+        = link_to outra_informacao, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_outra_informacao_path(outra_informacao), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to outra_informacao, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Nova outras informações', new_outra_informacao_path

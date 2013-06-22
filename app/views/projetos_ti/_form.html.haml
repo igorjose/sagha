@@ -8,7 +8,11 @@
     = f.input :coordenador_tecnico, label: "Coodenador Técnico", input_html: { class: 'span6' }
     = f.input :valor, label: "Valor", input_html: { class: 'span6' }
     = f.input :prazo, label: "Prazo", input_html: { class: 'span6' }
-    = f.input :previsto_orcamento, label: "Previsto no orçamento de 2013?"
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.input :previsto_orcamento, data: {toggle: 'checkbox'}, label: "Previsto no orçamento de 2013?"
     = f.input :observacao, label: "Observação", :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
 
   .actions

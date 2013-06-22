@@ -1,0 +1,15 @@
+= simple_form_for(@informacao_site) do |f|
+  = f.error_notification
+
+  .inputs
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.input :possui_site, data: {toggle: 'checkbox'}, label: "O órgão possui site?"
+    = f.input :responsavel_tecnico, input_html: { class: 'span6' }, label: 'Responsável Técnico'
+    = f.input :servicos_oferecidos, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: 'Serviços que o site oferece', placeholder: "Digite os serviços que o site oferece"
+    = f.input :local_hospedado, input_html: { class: 'span6' }, label: 'Onde o site está hospedado?'
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar informações sobre sites'

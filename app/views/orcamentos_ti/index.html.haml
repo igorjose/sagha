@@ -1,0 +1,27 @@
+%h1 Listar orçamentos de TI
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Orçamento de TI
+      %th
+      %th
+      %th
+  %tbody
+  - @orcamentos_ti.each do |orcamento_ti|
+    %tr
+      %td= orcamento_ti.orcamento_ti
+      %td
+        = link_to orcamento_ti, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_orcamento_ti_path(orcamento_ti), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to orcamento_ti, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Novo orçamento de TI', new_orcamento_ti_path

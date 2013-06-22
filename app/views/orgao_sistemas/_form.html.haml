@@ -3,7 +3,10 @@
 
   .inputs
     %div{style: "display: block;"}
-      = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: "Órgão"
+      - if current_user.admin
+        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: "Órgão", selected: current_user.orgao_id
+      - else
+        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: "Órgão", selected: current_user.orgao_id, disabled: true
     %div{style: "display: block;"}
       = f.association :sistema, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}
     %div{style: "display: block;"}

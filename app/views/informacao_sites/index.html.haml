@@ -1,0 +1,31 @@
+%h1 Listar informações sobre sites
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Possui site
+      %th Responsável técnico
+      %th Local onde está hospedado
+      %th
+      %th
+      %th
+  %tbody
+  - @informacao_sites.each do |informacao_site|
+    %tr
+      %td= informacao_site.possui_site
+      %td= informacao_site.responsavel_tecnico
+      %td= informacao_site.local_hospedado
+      %td
+        = link_to informacao_site, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_informacao_site_path(informacao_site), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to informacao_site, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Nova Informações sobre sites', new_informacao_site_path
