@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130620163724) do
+ActiveRecord::Schema.define(version: 20130621182723) do
 
   create_table "cargos", force: true do |t|
     t.string   "nome"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 20130620163724) do
     t.datetime "updated_at"
   end
 
+  create_table "informacao_sites", force: true do |t|
+    t.boolean  "possui_site"
+    t.string   "responsavel_tecnico"
+    t.text     "servicos_oferecidos"
+    t.string   "local_hospedado"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "informacoes_ged", force: true do |t|
     t.boolean  "processo_digitalizacao"
     t.integer  "numero_digitalizacao"
@@ -72,6 +81,12 @@ ActiveRecord::Schema.define(version: 20130620163724) do
     t.text     "certificacoes"
     t.text     "conhecimentos_adicionais"
     t.text     "observacoes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orcamentos_ti", force: true do |t|
+    t.integer  "orcamento_ti"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -178,6 +193,16 @@ ActiveRecord::Schema.define(version: 20130620163724) do
     t.datetime "updated_at"
   end
 
+  create_table "outras_informacoes", force: true do |t|
+    t.boolean  "recursos_suficientes"
+    t.text     "justificar_recursos"
+    t.string   "grau_satisfacao"
+    t.text     "principais_necessidades"
+    t.text     "duvidas_levantamento"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "projetos_ti", force: true do |t|
     t.string   "nome_projeto"
     t.text     "descricao"
@@ -238,5 +263,14 @@ ActiveRecord::Schema.define(version: 20130620163724) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "videomonitoramentos", force: true do |t|
+    t.boolean  "possui_cameras"
+    t.string   "pertencente_a"
+    t.boolean  "atual_videomonitoramento"
+    t.boolean  "previsto_videomonitoramento"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

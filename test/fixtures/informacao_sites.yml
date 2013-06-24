@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  possui_site: false
+  responsavel_tecnico: MyString
+  servicos_oferecidos: MyText
+  local_hospedado: MyString
+
+two:
+  possui_site: false
+  responsavel_tecnico: MyString
+  servicos_oferecidos: MyText
+  local_hospedado: MyString

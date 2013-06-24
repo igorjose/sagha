@@ -1,0 +1,16 @@
+= simple_form_for(@outra_informacao) do |f|
+  = f.error_notification
+
+  .inputs
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.input :recursos_suficientes, data: {toggle: 'checkbox'}, label: "Os recursos de TI que tenho disponíveis são suficientes para atender os objetivos do seu órgão?"
+    = f.input :justificar_recursos, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: 'Se não, justificar', placeholder: "Digite a justificativa se os recursos não forem suficientes"
+    = f.input :grau_satisfacao, as: :select, collection: ['Totalmente satisfeito', 'Satisfeito', 'Insatisfeito', 'Totalmente insatisfeito'], input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}, prompt: 'Selecione', label: "De uma forma geral, qual é o grau de satisfação da sua unidade de TI?"
+    = f.input :principais_necessidades, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: 'Em minha opinião, as 5(cinco) principais necessidades de TI da minha unidade/subunidade são:', placeholder: ""
+    = f.input :duvidas_levantamento, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: 'Dúvidas, Críticas ou Sugestões Relacionadas ao Levantamento', placeholder: "Digite alguma outra dúvida, crítica ou sugestão que tenha."
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar outras informações'

@@ -1,0 +1,7 @@
+= simple_form_for(@orcamento_ti) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :orcamento_ti, input_html: { class: 'span6' }, label: 'Orçamento de TI 2013 do órgão', placeholder: "Coloque apenas número" 
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar Orçamento de TI'

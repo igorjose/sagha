@@ -1,0 +1,33 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar informações sobre site selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Possui site:
+    %td
+      = @informacao_site.possui_site
+  %tr
+    %td
+      %b Responsavel tecnico:
+    %td
+      = @informacao_site.responsavel_tecnico
+  %tr
+    %td
+      %b Servicos oferecidos:
+    %td
+      = @informacao_site.servicos_oferecidos
+  %tr
+    %td
+      %b Local hospedado:
+    %td
+      = @informacao_site.local_hospedado
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_informacao_site_path(@informacao_site)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', informacao_sites_path

@@ -1,4 +1,12 @@
 Sagha::Application.routes.draw do
+  resources :outras_informacoes
+
+  resources :orcamentos_ti
+
+  resources :videomonitoramentos
+
+  resources :informacao_sites
+
   resources :projetos_ti
 
   resources :informacoes_ged

@@ -12,7 +12,11 @@
       %span.icons
         %span.first-icon.fui-checkbox-unchecked
         %span.second-icon.fui-checkbox-checked
+<<<<<<< HEAD
+      = f.input :previsto_orcamento, label: "Previsto no orçamento de 2013?"
+=======
       = f.input :previsto_orcamento, data: {toggle: 'checkbox'}, label: "Previsto no orçamento de 2013?"
+>>>>>>> 16adbca381bedb32ad211809d33be38caf477057
     = f.input :observacao, label: "Observação", :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}
 
   .actions
