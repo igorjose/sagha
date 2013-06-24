@@ -1,0 +1,31 @@
+%h1 Listar projetos de TI
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Nome do projeto
+      %th Descrição
+      %th Gerente do projeto
+      %th
+      %th
+      %th
+  %tbody
+  - @projetos_ti.each do |projeto_ti|
+    %tr
+      %td= projeto_ti.nome_projeto
+      %td= projeto_ti.descricao
+      %td= projeto_ti.gerente_projeto
+      %td
+        = link_to projeto_ti, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_projeto_ti_path(projeto_ti), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to projeto_ti, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Novo projeto de TI', new_projeto_ti_path

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  modelo: MyString
+  fabricante: MyString
+  sistema_operacional: MyString
+  arquitetura: MyString
+  dominio: MyString
+  processador: MyString
+  ram: MyString
+  hd: MyString
+  hostname: MyString
+  descricao: MyText
+  servicos: MyString
+
+two:
+  modelo: MyString
+  fabricante: MyString
+  sistema_operacional: MyString
+  arquitetura: MyString
+  dominio: MyString
+  processador: MyString
+  ram: MyString
+  hd: MyString
+  hostname: MyString
+  descricao: MyText
+  servicos: MyString

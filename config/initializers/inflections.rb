@@ -14,6 +14,15 @@
    inflect.irregular 'equipamento', 'equipamentos'
    inflect.irregular 'orgao_equipamento', 'orgao_equipamentos'
    inflect.irregular 'orgao_sistema', 'orgao_sistemas'
+   inflect.irregular 'orgao_sistema_proprio', 'orgao_sistemas_proprios'
+   inflect.irregular 'servidor', 'servidores'
+   inflect.irregular 'informacao_ged', 'informacoes_ged'
+   inflect.irregular 'projeto_ti', 'projetos_ti'
+   inflect.irregular 'informacao_site', 'informacao_sites'
+   inflect.irregular 'videomonitoramento', 'Videomonitoramentos'
+   inflect.irregular 'orcamento_ti', 'orcamentos_ti'
+   inflect.irregular 'outra_informacao', 'outras_informacoes'
+   inflect.irregular 'treinamento_ti', 'treinamentos_ti'
 #   inflect.uncountable %w( fish sheep )
  end
 

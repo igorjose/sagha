@@ -1,4 +1,22 @@
 Sagha::Application.routes.draw do
+  resources :treinamentos_ti
+
+  resources :outras_informacoes
+
+  resources :orcamentos_ti
+
+  resources :videomonitoramentos
+
+  resources :informacao_sites
+
+  resources :projetos_ti
+
+  resources :informacoes_ged
+
+  resources :servidores
+
+  resources :orgao_sistemas_proprios
+
   resources :orgao_sistemas
 
   resources :sistemas

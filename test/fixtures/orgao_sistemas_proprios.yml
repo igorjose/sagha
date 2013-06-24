@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  descricao: MyText
+  desenvolvedor: MyString
+  manutencao: MyString
+  cod_fonte: false
+  descricao_cod_fonte: MyText
+  lugar_hospedado: MyString
+  nr_usuario: 1
+  linguagem: MyString
+  banco: MyString
+  tem_licenca: false
+  terceiros_acessando: false
+  responsavel_banco: MyString
+  nivel_confidencialidade: MyString
+  nivel_integracao: MyString
+  existe_padroes: false
+  existe_ambiente_homologacao: false
+  existe_backup_diferenciado: false
+  existe_backup: false
+  descricao_backup: MyText
+  linguagem_banco: MyString
+  possui_documentos: MyText
+  descricao_documentos: MyText
+  possui_manual: false
+  descricao_manual: MyText
+
+two:
+  nome: MyString
+  descricao: MyText
+  desenvolvedor: MyString
+  manutencao: MyString
+  cod_fonte: false
+  descricao_cod_fonte: MyText
+  lugar_hospedado: MyString
+  nr_usuario: 1
+  linguagem: MyString
+  banco: MyString
+  tem_licenca: false
+  terceiros_acessando: false
+  responsavel_banco: MyString
+  nivel_confidencialidade: MyString
+  nivel_integracao: MyString
+  existe_padroes: false
+  existe_ambiente_homologacao: false
+  existe_backup_diferenciado: false
+  existe_backup: false
+  descricao_backup: MyText
+  linguagem_banco: MyString
+  possui_documentos: MyText
+  descricao_documentos: MyText
+  possui_manual: false
+  descricao_manual: MyText

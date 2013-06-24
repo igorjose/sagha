@@ -1,0 +1,28 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar treinamento de TI selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Treinamento:
+    %td
+      = @treinamento_ti.treinamento
+  %tr
+    %td
+      %b Empresa:
+    %td
+      = @treinamento_ti.empresa
+  %tr
+    %td
+      %b Qtd pessoa:
+    %td
+      = @treinamento_ti.qtd_pessoa
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_treinamento_ti_path(@treinamento_ti)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', treinamentos_ti_path

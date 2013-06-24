@@ -1,0 +1,38 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar outra informação selecionada
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Recursos suficientes:
+    %td
+      = @outra_informacao.recursos_suficientes
+  %tr
+    %td
+      %b Justificar recursos:
+    %td
+      = @outra_informacao.justificar_recursos
+  %tr
+    %td
+      %b Grau satisfacao:
+    %td
+      = @outra_informacao.grau_satisfacao
+  %tr
+    %td
+      %b Principais necessidades:
+    %td  
+      = @outra_informacao.principais_necessidades
+  %tr
+    %td
+      %b Duvidas levantamento:
+    %td
+      = @outra_informacao.duvidas_levantamento
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_outra_informacao_path(@outra_informacao)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', outras_informacoes_path

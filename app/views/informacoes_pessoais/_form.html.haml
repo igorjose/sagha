@@ -3,7 +3,7 @@
 
   .inputs
     %div{style: "display: block;"}
-      = f.association :cargo, label_method: :nome, label: 'Cargo exercido', input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}
+      = f.association :cargo, label_method: :nome, label: 'Cargo exercido', input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}, prompt: "Escolha um cargo"
     = f.input :nome, label: 'Nome', input_html: { class: 'span6' }
     = f.input :telefone, label: 'Telefone', input_html: { class: 'span6' }
     = f.input :celular_cooperativo, label: 'Celular coperativo', input_html: { class: 'span6' }
@@ -13,7 +13,7 @@
     /= f.input :tipo_contratacao, label: 'Tipo de contratação', input_html: { class: 'span6' }
     %label
       Tipo de contratação &nbsp;
-      = f.select :tipo_contratacao, ([["Terceirizado", "Terceirizado"], ["Comissionado", "Comissionado"], ["Servidor", "Servidor"]]), input_html: { class: 'span6' }
+      = f.select :tipo_contratacao, ([["Terceirizado", "Terceirizado"], ["Comissionado", "Comissionado"], ["Servidor", "Servidor"]]), input_html: { class: 'span6' }, prompt: "Selecione"
     = f.input :empresa, label: 'Se for terceirizado, qual empresa?', input_html: { class: 'span6' }
     = f.input :vigencia_contrato, label: 'Vigência do contrato', input_html: { class: 'span2' }
     %label.checkbox

@@ -1,0 +1,23 @@
+= simple_form_for(@informacao_ged) do |f|
+  = f.error_notification
+
+  .inputs
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.input :processo_digitalizacao, label: 'O Órgão possui algum processo de Digitalização dos documentos?'
+    = f.input :numero_digitalizacao, input_html: { class: 'span6' }, label: 'Qual a % de documentos digitalizados do Órgão?', placeholder: "Coloque apenas o número"
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.input :documentos_indexados, label: 'Os documentos digitalizados estão devidamente indexados?'
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.input :hospedado_sepog, label: 'Os arquivos digitalizados foram hospedados no Servidor da SEPOG (antiga SAM)?'
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar Informação sobre GED'

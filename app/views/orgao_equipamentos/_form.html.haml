@@ -3,13 +3,16 @@
 
   .inputs
     %div{style: "display: block;"}
-      = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão'
+      - if current_user.admin
+        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id
+      - else
+        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id, disabled: true
     %div{style: "display: block;"}
       = f.association :equipamento, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}
     = f.input :qtd_funcionando, input_html: { class: 'span6' }, label: 'Quantidade funcionando'
     = f.input :qtd_defeito, input_html: { class: 'span6' }, label: 'Quantidade com defeito'
     = f.input :descricao_defeito, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: 'Descrição dos equipamentos com defeito', placeholder: "Descreva o defeito dos equipamentos"
-    = f.input :qtd_extra, input_html: { class: 'span6' }, label: 'Quantidade funcionando'
+    = f.input :qtd_extra, input_html: { class: 'span6' }, label: 'Quantidade de equipamentos reserva'
     = f.input :qtd_emprestado, input_html: { class: 'span6' }, label: 'Quantidade que estão emprestados'
     = f.input :qtd_alugado, input_html: { class: 'span6' }, label: 'Quantidade que estão alugados'
     = f.input :qtd_garantia, input_html: { class: 'span6' }, label: 'Quantidade que ainda estão com garantia'

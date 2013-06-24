@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  possui_cameras: false
+  pertencente_a: MyString
+  atual_videomonitoramento: false
+  previsto_videomonitoramento: false
+
+two:
+  possui_cameras: false
+  pertencente_a: MyString
+  atual_videomonitoramento: false
+  previsto_videomonitoramento: false

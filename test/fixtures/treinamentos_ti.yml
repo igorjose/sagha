@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  treinamento: MyString
+  empresa: MyString
+  qtd_pessoa: 1
+
+two:
+  treinamento: MyString
+  empresa: MyString
+  qtd_pessoa: 1

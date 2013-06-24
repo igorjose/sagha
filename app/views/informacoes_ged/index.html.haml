@@ -1,0 +1,31 @@
+%h1 Listar Informações sobre o GED
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th O Órgão possui algum processo de Digitalização dos documentos?
+      %th Qual a % de documentos digitalizados do Órgão?
+      %th Os documentos digitalizados estão devidamente indexados?
+      %th
+      %th
+      %th
+  %tbody
+  - @informacoes_ged.each do |informacao_ged|
+    %tr
+      %td= informacao_ged.processo_digitalizacao
+      %td= informacao_ged.numero_digitalizacao
+      %td= informacao_ged.documentos_indexados
+      %td
+        = link_to informacao_ged, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_informacao_ged_path(informacao_ged), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to informacao_ged, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Nova Informação GED', new_informacao_ged_path

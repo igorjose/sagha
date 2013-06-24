@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130617143448) do
+ActiveRecord::Schema.define(version: 20130624172642) do
 
   create_table "cargos", force: true do |t|
     t.string   "nome"
@@ -44,6 +44,24 @@ ActiveRecord::Schema.define(version: 20130617143448) do
     t.datetime "updated_at"
   end
 
+  create_table "informacao_sites", force: true do |t|
+    t.boolean  "possui_site"
+    t.string   "responsavel_tecnico"
+    t.text     "servicos_oferecidos"
+    t.string   "local_hospedado"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "informacoes_ged", force: true do |t|
+    t.boolean  "processo_digitalizacao"
+    t.integer  "numero_digitalizacao"
+    t.boolean  "documentos_indexados"
+    t.boolean  "hospedado_sepog"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "informacoes_pessoais", force: true do |t|
     t.integer  "cargo_id"
     t.string   "nome"
@@ -63,6 +81,12 @@ ActiveRecord::Schema.define(version: 20130617143448) do
     t.text     "certificacoes"
     t.text     "conhecimentos_adicionais"
     t.text     "observacoes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orcamentos_ti", force: true do |t|
+    t.integer  "orcamento_ti"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -113,6 +137,36 @@ ActiveRecord::Schema.define(version: 20130617143448) do
     t.integer  "sistema_id"
   end
 
+  create_table "orgao_sistemas_proprios", force: true do |t|
+    t.string   "nome"
+    t.text     "descricao"
+    t.string   "desenvolvedor"
+    t.string   "manutencao"
+    t.boolean  "cod_fonte"
+    t.text     "descricao_cod_fonte"
+    t.string   "lugar_hospedado"
+    t.integer  "nr_usuario"
+    t.string   "linguagem"
+    t.string   "banco"
+    t.boolean  "tem_licenca"
+    t.boolean  "terceiros_acessando"
+    t.string   "responsavel_banco"
+    t.string   "nivel_confidencialidade"
+    t.string   "nivel_integracao"
+    t.boolean  "existe_padroes"
+    t.boolean  "existe_ambiente_homologacao"
+    t.boolean  "existe_backup_diferenciado"
+    t.boolean  "existe_backup"
+    t.text     "descricao_backup"
+    t.string   "linguagem_banco"
+    t.text     "descricao_documentos"
+    t.boolean  "possui_manual"
+    t.text     "descricao_manual"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "possui_documentos"
+  end
+
   create_table "orgao_softwares", force: true do |t|
     t.integer  "orgao_id"
     t.integer  "software_id"
@@ -139,6 +193,45 @@ ActiveRecord::Schema.define(version: 20130617143448) do
     t.datetime "updated_at"
   end
 
+  create_table "outras_informacoes", force: true do |t|
+    t.boolean  "recursos_suficientes"
+    t.text     "justificar_recursos"
+    t.string   "grau_satisfacao"
+    t.text     "principais_necessidades"
+    t.text     "duvidas_levantamento"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projetos_ti", force: true do |t|
+    t.string   "nome_projeto"
+    t.text     "descricao"
+    t.string   "gerente_projeto"
+    t.string   "coordenador_tecnico"
+    t.string   "valor"
+    t.string   "prazo"
+    t.boolean  "previsto_orcamento"
+    t.text     "observacao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "servidores", force: true do |t|
+    t.string   "modelo"
+    t.string   "fabricante"
+    t.string   "sistema_operacional"
+    t.string   "arquitetura"
+    t.string   "dominio"
+    t.string   "processador"
+    t.string   "ram"
+    t.string   "hd"
+    t.string   "hostname"
+    t.text     "descricao"
+    t.string   "servicos"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sistemas", force: true do |t|
     t.string   "nome"
     t.datetime "created_at"
@@ -147,6 +240,14 @@ ActiveRecord::Schema.define(version: 20130617143448) do
 
   create_table "softwares", force: true do |t|
     t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "treinamentos_ti", force: true do |t|
+    t.string   "treinamento"
+    t.string   "empresa"
+    t.integer  "qtd_pessoa"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -170,5 +271,14 @@ ActiveRecord::Schema.define(version: 20130617143448) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "videomonitoramentos", force: true do |t|
+    t.boolean  "possui_cameras"
+    t.string   "pertencente_a"
+    t.boolean  "atual_videomonitoramento"
+    t.boolean  "previsto_videomonitoramento"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

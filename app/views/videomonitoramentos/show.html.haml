@@ -1,0 +1,33 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar videomonitoramento selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Possui cameras:
+    %td
+      = @videomonitoramento.possui_cameras
+  %tr
+    %td
+      %b Pertencente a:
+    %td
+      = @videomonitoramento.pertencente_a
+  %tr
+    %td
+      %b Atual videomonitoramento:
+    %td
+      = @videomonitoramento.atual_videomonitoramento
+  %tr
+    %td
+      %b Previsto videomonitoramento:
+    %td
+      = @videomonitoramento.previsto_videomonitoramento
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_videomonitoramento_path(@videomonitoramento)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', videomonitoramentos_path
