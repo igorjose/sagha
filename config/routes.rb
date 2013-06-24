@@ -1,4 +1,6 @@
 Sagha::Application.routes.draw do
+  resources :treinamentos_ti
+
   resources :outras_informacoes
 
   resources :orcamentos_ti

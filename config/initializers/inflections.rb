@@ -22,6 +22,7 @@
    inflect.irregular 'videomonitoramento', 'Videomonitoramentos'
    inflect.irregular 'orcamento_ti', 'orcamentos_ti'
    inflect.irregular 'outra_informacao', 'outras_informacoes'
+   inflect.irregular 'treinamento_ti', 'treinamentos_ti'
 #   inflect.uncountable %w( fish sheep )
  end
 

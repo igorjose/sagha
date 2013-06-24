@@ -1,0 +1,10 @@
+= simple_form_for(@treinamento_ti) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :treinamento, label: "Treinamento", input_html: { class: 'span6' }
+    = f.input :empresa, label: "Empresa", input_html: { class: 'span6' }
+    = f.input :qtd_pessoa, label: "Quantidade de pessoas", input_html: { class: 'span6' }
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar treinamento de TI'
