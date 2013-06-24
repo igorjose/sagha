@@ -28,7 +28,7 @@ class ProjetosTiController < ApplicationController
 
     respond_to do |format|
       if @projeto_ti.save
-        format.html { redirect_to @projeto_ti, notice: 'Projeto ti was successfully created.' }
+        format.html { redirect_to @projeto_ti, notice: 'Projeto de TI criado com sucesso.' }
         format.json { render action: 'show', status: :created, location: @projeto_ti }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class ProjetosTiController < ApplicationController
   def update
     respond_to do |format|
       if @projeto_ti.update(projeto_ti_params)
-        format.html { redirect_to @projeto_ti, notice: 'Projeto ti was successfully updated.' }
+        format.html { redirect_to @projeto_ti, notice: 'Projeto de TI atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
