@@ -1,0 +1,16 @@
+= simple_form_for(@demanda_videomonitoramento) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :qtd_camera, label: 'Quantidade de câmeras', input_html: { class: 'span6' }
+    = f.input :obj_videomonitoramento, label: 'Objetivo do videomonitoramento', input_html: { class: 'span6' }
+    = f.input :infra_monitoramento, label: 'Infraestrutura da Sala de monitoramento', input_html: { class: 'span6' }
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.input :previsto_orcamento, label: 'Previsto no Orçamento 2013?'
+
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar nova demanda'
+

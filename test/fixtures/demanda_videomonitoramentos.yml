@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  qtd_camera: 1
+  obj_videomonitoramento: MyString
+  infra_monitoramento: MyString
+  previsto_orcamento: false
+
+two:
+  qtd_camera: 1
+  obj_videomonitoramento: MyString
+  infra_monitoramento: MyString
+  previsto_orcamento: false

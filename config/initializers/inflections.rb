@@ -19,10 +19,11 @@
    inflect.irregular 'informacao_ged', 'informacoes_ged'
    inflect.irregular 'projeto_ti', 'projetos_ti'
    inflect.irregular 'informacao_site', 'informacao_sites'
-   inflect.irregular 'videomonitoramento', 'Videomonitoramentos'
+   inflect.irregular 'videomonitoramento', 'videomonitoramentos'
    inflect.irregular 'orcamento_ti', 'orcamentos_ti'
    inflect.irregular 'outra_informacao', 'outras_informacoes'
    inflect.irregular 'treinamento_ti', 'treinamentos_ti'
+   inflect.irregular 'demanda_videomonitoramento', 'demanda_videomonitoramentos'
 #   inflect.uncountable %w( fish sheep )
  end
 

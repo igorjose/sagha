@@ -1,0 +1,31 @@
+%h1 Listar demanda videomonitoramentos
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Quantidade de câmera
+      %th Objetivo do videomonitoramento
+      %th Orçamento previsto para 2013?
+      %th
+      %th
+      %th
+  %tbody
+  - @demanda_videomonitoramentos.each do |demanda_videomonitoramento|
+    %tr
+      %td= demanda_videomonitoramento.qtd_camera
+      %td= demanda_videomonitoramento.obj_videomonitoramento
+      %td= demanda_videomonitoramento.previsto_orcamento
+      %td
+        = link_to demanda_videomonitoramento, :title => 'Visualizar' do
+          %span.fui-eye{:class => 'icons24'}
+      %td
+        = link_to edit_demanda_videomonitoramento_path(demanda_videomonitoramento), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to demanda_videomonitoramento, :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Nova Demanda videomonitoramento', new_demanda_videomonitoramento_path

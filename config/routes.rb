@@ -1,4 +1,6 @@
 Sagha::Application.routes.draw do
+  resources :demanda_videomonitoramentos
+
   resources :treinamentos_ti
 
   resources :outras_informacoes

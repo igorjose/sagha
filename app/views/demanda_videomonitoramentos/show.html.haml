@@ -1,0 +1,33 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar demanda videomonitoramento selecionada
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Qtd câmera:
+    %td
+      = @demanda_videomonitoramento.qtd_camera
+  %tr
+    %td
+      %b Obj videomonitoramento:
+    %td
+      = @demanda_videomonitoramento.obj_videomonitoramento
+  %tr
+    %td
+      %b Infra monitoramento:
+    %td
+      = @demanda_videomonitoramento.infra_monitoramento
+  %tr
+    %td
+      %b Previsto orcamento:
+    %td
+      = @demanda_videomonitoramento.previsto_orcamento
+
+%br      
+
+.btn.btn-small.btn-inverse
+  = link_to 'Editar', edit_demanda_videomonitoramento_path(@demanda_videomonitoramento)
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', demanda_videomonitoramentos_path
