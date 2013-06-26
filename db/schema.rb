@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130624172642) do
+ActiveRecord::Schema.define(version: 20130625141839) do
 
   create_table "cargos", force: true do |t|
     t.string   "nome"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20130624172642) do
     t.string   "local_hospedado"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   create_table "informacoes_ged", force: true do |t|
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 20130624172642) do
     t.boolean  "hospedado_sepog"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   create_table "informacoes_pessoais", force: true do |t|
@@ -83,12 +85,14 @@ ActiveRecord::Schema.define(version: 20130624172642) do
     t.text     "observacoes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   create_table "orcamentos_ti", force: true do |t|
     t.integer  "orcamento_ti"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   create_table "orgao_equipamentos", force: true do |t|
@@ -165,6 +169,7 @@ ActiveRecord::Schema.define(version: 20130624172642) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "possui_documentos"
+    t.integer  "orgao_id"
   end
 
   create_table "orgao_softwares", force: true do |t|
@@ -201,6 +206,7 @@ ActiveRecord::Schema.define(version: 20130624172642) do
     t.text     "duvidas_levantamento"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   create_table "projetos_ti", force: true do |t|
@@ -214,6 +220,7 @@ ActiveRecord::Schema.define(version: 20130624172642) do
     t.text     "observacao"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   create_table "servidores", force: true do |t|
@@ -230,6 +237,7 @@ ActiveRecord::Schema.define(version: 20130624172642) do
     t.string   "servicos"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   create_table "sistemas", force: true do |t|
@@ -242,6 +250,7 @@ ActiveRecord::Schema.define(version: 20130624172642) do
     t.string   "nome"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   create_table "treinamentos_ti", force: true do |t|
@@ -279,6 +288,7 @@ ActiveRecord::Schema.define(version: 20130624172642) do
     t.boolean  "previsto_videomonitoramento"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
 end

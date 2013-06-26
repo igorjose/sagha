@@ -2,6 +2,11 @@
   = f.error_notification
 
   .inputs
+    %div{style: "display: block;"}
+      - if current_user.admin
+        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id
+      - else
+        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id, disabled: true
     %label.checkbox
       %span.icons
         %span.first-icon.fui-checkbox-unchecked
