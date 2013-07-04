@@ -4,7 +4,13 @@ class OrgaoEquipamentosController < ApplicationController
   # GET /orgao_equipamentos
   # GET /orgao_equipamentos.json
   def index
-    @orgao_equipamentos = OrgaoEquipamento.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @orgao_equipamentos = OrgaoEquipamento.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @orgao_equipamentos = OrgaoEquipamento.all
+    else
+      @orgao_equipamentos = OrgaoEquipamento.where(orgao_id: current_user.orgao_id)
+    end
   end
 
   # GET /orgao_equipamentos/1

@@ -4,7 +4,13 @@ class OrgaoSoftwaresController < ApplicationController
   # GET /orgao_softwares
   # GET /orgao_softwares.json
   def index
-    @orgao_softwares = OrgaoSoftware.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @orgao_softwares = OrgaoSoftware.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @orgao_softwares = OrgaoSoftware.all
+    else
+      @orgao_softwares = OrgaoSoftware.where(orgao_id: current_user.orgao_id)
+    end
   end
 
   # GET /orgao_softwares/1
