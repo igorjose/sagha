@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class InformacoesGedController < ApplicationController
   before_action :set_informacao_ged, only: [:show, :edit, :update, :destroy]
 
@@ -69,6 +71,6 @@ class InformacoesGedController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def informacao_ged_params
-      params.require(:informacao_ged).permit(:processo_digitalizacao, :numero_digitalizacao, :documentos_indexados, :hospedado_sepog)
+      params.require(:informacao_ged).permit(:orgao_id, :processo_digitalizacao, :numero_digitalizacao, :documentos_indexados, :hospedado_sepog)
     end
 end

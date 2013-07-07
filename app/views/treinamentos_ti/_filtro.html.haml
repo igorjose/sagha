@@ -1,0 +1,5 @@
+= form_tag({controller: :treinamentos_ti, action: :index}, method: "get") do
+  = select_tag :orgao_id, options_from_collection_for_select(Orgao.all, :id, :nome), :prompt => "Selecione um órgão", class: 'span6'
+  
+  = submit_tag :submit, class: 'btn btn-success filtro', value: 'Filtrar órgão'
+

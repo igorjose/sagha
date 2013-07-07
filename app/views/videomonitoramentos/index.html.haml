@@ -1,20 +1,23 @@
 %h1 Listar videomonitoramentos
 
+- if current_user.admin
+  = render 'filtro'
+
 %table.table.table-hover
   %thead
     %tr
+      %th Órgão
       %th Possui câmeras
       %th Pertencente a
-      %th Possui projeto atual de videomonitoramento
       %th
       %th
       %th
   %tbody
   - @videomonitoramentos.each do |videomonitoramento|
     %tr
+      %td= videomonitoramento.orgao.nome
       %td= videomonitoramento.possui_cameras
       %td= videomonitoramento.pertencente_a
-      %td= videomonitoramento.atual_videomonitoramento
       %td
         = link_to videomonitoramento, :title => 'Visualizar' do
           %span.fui-eye{:class => 'icons24'}

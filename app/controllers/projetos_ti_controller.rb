@@ -69,6 +69,6 @@ class ProjetosTiController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def projeto_ti_params
-      params.require(:projeto_ti).permit(:nome_projeto, :descricao, :gerente_projeto, :coordenador_tecnico, :valor, :prazo, :previsto_orcamento, :observacao)
+      params.require(:projeto_ti).permit(:orgao_id, :nome_projeto, :descricao, :gerente_projeto, :coordenador_tecnico, :valor, :prazo, :previsto_orcamento, :observacao)
     end
 end

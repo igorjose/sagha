@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class OrgaoEquipamentosController < ApplicationController
   before_action :set_orgao_equipamento, only: [:show, :edit, :update, :destroy]
 

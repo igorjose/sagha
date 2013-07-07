@@ -1,10 +1,18 @@
+# encoding: utf-8
+
 class OrgaoImpressorasController < ApplicationController
   before_action :set_orgao_impressora, only: [:show, :edit, :update, :destroy]
 
   # GET /orgao_impressoras
   # GET /orgao_impressoras.json
   def index
-    @orgao_impressoras = OrgaoImpressora.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @orgao_impressoras = OrgaoImpressora.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @orgao_impressoras = OrgaoImpressora.all
+    else
+      @orgao_impressoras = OrgaoImpressora.where(orgao_id: current_user.orgao_id)
+    end
   end
 
   # GET /orgao_impressoras/1

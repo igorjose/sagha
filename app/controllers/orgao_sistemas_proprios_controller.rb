@@ -1,10 +1,18 @@
+# encoding: utf-8
+
 class OrgaoSistemasPropriosController < ApplicationController
   before_action :set_orgao_sistema_proprio, only: [:show, :edit, :update, :destroy]
 
   # GET /orgao_sistemas_proprios
   # GET /orgao_sistemas_proprios.json
   def index
-    @orgao_sistemas_proprios = OrgaoSistemaProprio.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @orgao_sistemas_proprios = OrgaoSistemaProprio.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @orgao_sistemas_proprios = OrgaoSistemaProprio.all
+    else
+      @orgao_sistemas_proprios = OrgaoSistemaProprio.where(orgao_id: current_user.orgao_id)
+    end
   end
 
   # GET /orgao_sistemas_proprios/1
@@ -69,6 +77,6 @@ class OrgaoSistemasPropriosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def orgao_sistema_proprio_params
-      params.require(:orgao_sistema_proprio).permit(:nome, :descricao, :desenvolvedor, :manutencao, :cod_fonte, :descricao_cod_fonte, :lugar_hospedado, :nr_usuario, :linguagem, :banco, :tem_licenca, :terceiros_acessando, :responsavel_banco, :nivel_confidencialidade, :nivel_integracao, :existe_padroes, :existe_ambiente_homologacao, :existe_backup_diferenciado, :existe_backup, :descricao_backup, :linguagem_banco, :possui_documentos, :descricao_documentos, :possui_manual, :descricao_manual)
+      params.require(:orgao_sistema_proprio).permit(:orgao_id, :nome, :descricao, :desenvolvedor, :manutencao, :cod_fonte, :descricao_cod_fonte, :lugar_hospedado, :nr_usuario, :linguagem, :banco, :tem_licenca, :terceiros_acessando, :responsavel_banco, :nivel_confidencialidade, :nivel_integracao, :existe_padroes, :existe_ambiente_homologacao, :existe_backup_diferenciado, :existe_backup, :descricao_backup, :linguagem_banco, :possui_documentos, :descricao_documentos, :possui_manual, :descricao_manual)
     end
 end

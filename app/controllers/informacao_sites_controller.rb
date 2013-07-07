@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class InformacaoSitesController < ApplicationController
   before_action :set_informacao_site, only: [:show, :edit, :update, :destroy]
 
@@ -69,6 +71,6 @@ class InformacaoSitesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def informacao_site_params
-      params.require(:informacao_site).permit(:possui_site, :responsavel_tecnico, :servicos_oferecidos, :local_hospedado)
+      params.require(:informacao_site).permit(:orgao_id, :possui_site, :responsavel_tecnico, :servicos_oferecidos, :local_hospedado)
     end
 end

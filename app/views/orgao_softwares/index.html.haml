@@ -1,6 +1,7 @@
 %h1 Lista de Softwares utilizados pelo órgão
 
-= render 'filtro'
+- if current_user.admin
+  = render 'filtro'
 
 %table.table.table-hover
   %thead

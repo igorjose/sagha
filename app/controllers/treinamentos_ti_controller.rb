@@ -69,6 +69,6 @@ class TreinamentosTiController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def treinamento_ti_params
-      params.require(:treinamento_ti).permit(:treinamento, :empresa, :qtd_pessoa)
+      params.require(:treinamento_ti).permit(:orgao_id, :treinamento, :empresa, :qtd_pessoa)
     end
 end

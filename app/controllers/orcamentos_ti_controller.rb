@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class OrcamentosTiController < ApplicationController
   before_action :set_orcamento_ti, only: [:show, :edit, :update, :destroy]
 
@@ -69,6 +71,6 @@ class OrcamentosTiController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def orcamento_ti_params
-      params.require(:orcamento_ti).permit(:orcamento_ti)
+      params.require(:orcamento_ti).permit(:orgao_id, :orcamento_ti)
     end
 end

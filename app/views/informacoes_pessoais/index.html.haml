@@ -1,22 +1,23 @@
 %h1 Listar Informações pessoais cadastradas
 
+- if current_user.admin
+  = render 'filtro'
+  
 %table.table.table-hover
   %thead
     %tr
+      %th Órgão
       %th Cargo
       %th Nome
-      %th Telefone
-      %th Email cooperativo
       %th
       %th
       %th
   %tbody
   - @informacoes_pessoais.each do |informacao_pessoal|
     %tr
+      %td= informacao_pessoal.orgao.nome
       %td= informacao_pessoal.cargo.nome
       %td= informacao_pessoal.nome
-      %td= informacao_pessoal.telefone
-      %td= informacao_pessoal.email_cooperativo
       %td
         = link_to informacao_pessoal, :title => 'Visualizar' do
           %span.fui-eye{:class => 'icons24'}

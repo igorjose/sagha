@@ -1,26 +1,25 @@
 %h1 Informações sobre impressoras
 
-= render 'filtro'
+- if current_user.admin
+  = render 'filtro'
 
 %table.table.table-hover
   %thead
     %tr
+      %th Órgão
       %th Tipo
       %th Funcionando
       %th Defeituosas
-      %th Alugadas
-      %th Contrato Locação
       %th
       %th
       %th
   %tbody
   - @orgao_impressoras.each do |orgao_impressora|
     %tr
+      %td= orgao_impressora.orgao.nome
       %td= orgao_impressora.tipo
       %td= orgao_impressora.funcionando
       %td= orgao_impressora.defeituosas
-      %td= orgao_impressora.alugadas
-      %td= orgao_impressora.tem_contrato_locacao
       %td
         = link_to orgao_impressora, :title => 'Visualizar' do
           %span.fui-eye{:class => 'icons24'}

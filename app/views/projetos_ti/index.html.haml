@@ -1,10 +1,13 @@
 %h1 Listar projetos de TI
 
+- if current_user.admin
+  = render 'filtro'
+  
 %table.table.table-hover
   %thead
     %tr
+      %th Órgão
       %th Nome do projeto
-      %th Descrição
       %th Gerente do projeto
       %th
       %th
@@ -12,8 +15,8 @@
   %tbody
   - @projetos_ti.each do |projeto_ti|
     %tr
+      %td= projeto_ti.orgao.nome
       %td= projeto_ti.nome_projeto
-      %td= projeto_ti.descricao
       %td= projeto_ti.gerente_projeto
       %td
         = link_to projeto_ti, :title => 'Visualizar' do

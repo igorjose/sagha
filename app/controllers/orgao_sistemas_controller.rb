@@ -1,10 +1,18 @@
+# encoding: utf-8
+
 class OrgaoSistemasController < ApplicationController
   before_action :set_orgao_sistema, only: [:show, :edit, :update, :destroy]
 
   # GET /orgao_sistemas
   # GET /orgao_sistemas.json
   def index
-    @orgao_sistemas = OrgaoSistema.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @orgao_sistemas = OrgaoSistema.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @orgao_sistemas = OrgaoSistema.all
+    else
+      @orgao_sistemas = OrgaoSistema.where(orgao_id: current_user.orgao_id)
+    end
   end
 
   # GET /orgao_sistemas/1

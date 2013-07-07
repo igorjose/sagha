@@ -30,6 +30,7 @@
                   = link_to 'Formulários', '#'
                   %ul
                     %li
+                      //= link_to 'Desktops', desktop_path(desktop)
                       - desktop = Desktop.find_by(orgao_id: current_user.orgao_id)
                       - if desktop
                         = link_to 'Desktops', desktop_path(desktop)
@@ -73,15 +74,15 @@
                     = link_to 'Admin', '#'
                     %ul
                       %li
-                        = link_to 'Softwares', softwares_path
-                      %li
-                        = link_to 'Órgãos', orgaos_path
-                      %li
                         = link_to 'Cargos', cargos_path
                       %li
                         = link_to 'Equipamentos', equipamentos_path
                       %li
-                        = link_to 'Sistemas', sistemas_path
+                        = link_to 'Órgãos', orgaos_path
+                      %li
+                        = link_to 'Sistemas', sistemas_path                      
+                      %li
+                        = link_to 'Softwares', softwares_path
 
     .container
 

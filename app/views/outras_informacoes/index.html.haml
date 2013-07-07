@@ -1,8 +1,12 @@
 %h1 Listar outras informações
 
+- if current_user.admin
+  = render 'filtro'
+  
 %table.table.table-hover
   %thead
     %tr
+      %th Órgão
       %th Os recursos são suficientes
       %th Grau de satisfação
       %th
@@ -11,6 +15,7 @@
   %tbody
   - @outras_informacoes.each do |outra_informacao|
     %tr
+      %td= outra_informacao.orgao.nome
       %td= outra_informacao.recursos_suficientes
       %td= outra_informacao.grau_satisfacao
       %td

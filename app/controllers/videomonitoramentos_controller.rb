@@ -69,6 +69,6 @@ class VideomonitoramentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def videomonitoramento_params
-      params.require(:videomonitoramento).permit(:possui_cameras, :pertencente_a, :atual_videomonitoramento, :previsto_videomonitoramento)
+      params.require(:videomonitoramento).permit(:orgao_id, :possui_cameras, :pertencente_a, :atual_videomonitoramento, :previsto_videomonitoramento)
     end
 end

@@ -24,7 +24,7 @@ class DesktopsController < ApplicationController
   # POST /desktops
   # POST /desktops.json
   def create
-    desktop_params[:orgao_id] = current_user.orgao_id
+    #desktop_params[:orgao_id] = current_user.orgao_id
 
     @desktop = Desktop.new(desktop_params)
 
@@ -71,6 +71,6 @@ class DesktopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def desktop_params
-      params.require(:desktop).permit(:qtd_funcionando, :qtd_extra, :qtd_defeito, :descricao_defeito, :qtd_emprestado, :lugar_emprestado, :qtd_garantia, :tem_contrato_locacao, :qtd_alugados, :descricao_locacao, :vigencia_contrato_locacao, :tem_contrato_manutencao, :qtd_manutencao, :descricao_manutencao, :vigencia_contrato_manutencao)
+      params.require(:desktop).permit(:orgao_id, :qtd_funcionando, :qtd_extra, :qtd_defeito, :descricao_defeito, :qtd_emprestado, :lugar_emprestado, :qtd_garantia, :tem_contrato_locacao, :qtd_alugados, :descricao_locacao, :vigencia_contrato_locacao, :tem_contrato_manutencao, :qtd_manutencao, :descricao_manutencao, :vigencia_contrato_manutencao)
     end
 end

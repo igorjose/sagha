@@ -1,20 +1,23 @@
 %h1 Listar informações sobre servidores
 
+- if current_user.admin
+  = render 'filtro'
+  
 %table.table.table-hover
   %thead
     %tr
+      %th Órgão
       %th Modelo
       %th Fabricante
-      %th Sistema operacional
       %th
       %th
       %th
   %tbody
   - @servidores.each do |servidor|
     %tr
+      %td= servidor.orgao.nome
       %td= servidor.modelo
       %td= servidor.fabricante
-      %td= servidor.sistema_operacional
       %td
         = link_to servidor, :title => 'Visualizar' do
           %span.fui-eye{:class => 'icons24'}

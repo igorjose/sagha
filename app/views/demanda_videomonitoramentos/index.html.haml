@@ -1,20 +1,23 @@
 %h1 Listar demanda videomonitoramentos
 
+- if current_user.admin
+  = render 'filtro'
+  
 %table.table.table-hover
   %thead
     %tr
+      %th Órgão
       %th Quantidade de câmera
       %th Objetivo do videomonitoramento
-      %th Orçamento previsto para 2013?
       %th
       %th
       %th
   %tbody
   - @demanda_videomonitoramentos.each do |demanda_videomonitoramento|
     %tr
+      %td= demanda_videomonitoramento.orgao.nome
       %td= demanda_videomonitoramento.qtd_camera
       %td= demanda_videomonitoramento.obj_videomonitoramento
-      %td= demanda_videomonitoramento.previsto_orcamento
       %td
         = link_to demanda_videomonitoramento, :title => 'Visualizar' do
           %span.fui-eye{:class => 'icons24'}

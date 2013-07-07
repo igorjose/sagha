@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class OrgaosController < ApplicationController
   before_action :set_orgao, only: [:show, :edit, :update, :destroy]
 

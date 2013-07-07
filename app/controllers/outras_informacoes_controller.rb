@@ -69,6 +69,6 @@ class OutrasInformacoesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def outra_informacao_params
-      params.require(:outra_informacao).permit(:recursos_suficientes, :justificar_recursos, :grau_satisfacao, :principais_necessidades, :duvidas_levantamento)
+      params.require(:outra_informacao).permit(:orgao_id, :recursos_suficientes, :justificar_recursos, :grau_satisfacao, :principais_necessidades, :duvidas_levantamento)
     end
 end

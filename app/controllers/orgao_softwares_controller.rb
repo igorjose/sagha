@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class OrgaoSoftwaresController < ApplicationController
   before_action :set_orgao_software, only: [:show, :edit, :update, :destroy]
 

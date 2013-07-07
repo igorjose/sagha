@@ -1,8 +1,12 @@
 %h1 Listar treinamentos de TI
 
+- if current_user.admin
+  = render 'filtro'
+  
 %table.table.table-hover
   %thead
     %tr
+      %th Órgão
       %th Treinamento
       %th Quantidade de pessoa
       %th
@@ -11,6 +15,7 @@
   %tbody
   - @treinamentos_ti.each do |treinamento_ti|
     %tr
+      %td= treinamento_ti.orgao.nome
       %td= treinamento_ti.treinamento
       %td= treinamento_ti.qtd_pessoa
       %td
