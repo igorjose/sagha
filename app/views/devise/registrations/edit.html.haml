@@ -5,7 +5,10 @@
   = f.error_notification
   .form-inputs
     = f.input :email, :required => true, :autofocus => true, input_html: { class: 'span6' }
-    = f.association :orgao, :required => true, input_html: {class: 'select-block'}, label_method: :nome, :label => "Órgão", input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}
+    - if current_user.admin
+      = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id
+    - else
+      = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id, disabled: true
 
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       %p
@@ -15,13 +18,5 @@
     = f.input :current_password, :hint => " Para concluir as alterações é necessário informar sua senha atual", :required => true, input_html: { class: 'span6' }, :label => "Senha atual"
   .form-actions
     = f.button :submit, "Atualizar cadastro", class: 'btn btn-success'
-
-
-%h3 Cancelar conta? Clique no link abaixo
-
-%p
-  #{link_to "Cancelar conta", registration_path(resource_name), :data => { :confirm => "Você tem certeza?" }, :method => :delete}
-
-%br
 
 = link_to "Voltar", :back

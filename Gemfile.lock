@@ -139,7 +139,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 1.0.1)
   jquery-rails
-  rails (= 4.0.0.rc1)
+  rails
   sass-rails (~> 4.0.0.rc1)
   sdoc
   simple_form

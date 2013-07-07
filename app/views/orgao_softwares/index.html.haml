@@ -15,7 +15,7 @@
   %tbody
   - @orgao_softwares.each do |orgao_software|
     %tr
-      %td= orgao_software.orgao.nome
+      %td= orgao_software.orgao.nome if orgao_software.orgao
       %td= orgao_software.software.nome
       %td= orgao_software.quantidade
       %td
@@ -31,4 +31,4 @@
 %br
 
 .btn.btn-small.btn-inverse
-  = link_to 'Criar novo', new_orgao_software_path
+  = link_to 'Cadastrar', new_orgao_software_path
