@@ -4,7 +4,14 @@ class OutrasInformacoesController < ApplicationController
   # GET /outras_informacoes
   # GET /outras_informacoes.json
   def index
-    @outras_informacoes = OutraInformacao.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @outras_informacoes = OutraInformacao.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @outras_informacoes = OutraInformacao.all
+    else
+      @outras_informacoes = OutraInformacao.where(orgao_id: current_user.orgao_id)
+    end    
+    #@outras_informacoes = OutraInformacao.all
   end
 
   # GET /outras_informacoes/1

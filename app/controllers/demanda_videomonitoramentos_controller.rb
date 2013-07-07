@@ -4,7 +4,14 @@ class DemandaVideomonitoramentosController < ApplicationController
   # GET /demanda_videomonitoramentos
   # GET /demanda_videomonitoramentos.json
   def index
-    @demanda_videomonitoramentos = DemandaVideomonitoramento.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @demanda_videomonitoramentos = DemandaVideomonitoramento.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @demanda_videomonitoramentos = DemandaVideomonitoramento.all
+    else
+      @demanda_videomonitoramentos = DemandaVideomonitoramento.where(orgao_id: current_user.orgao_id)
+    end    
+    #@demanda_videomonitoramentos = DemandaVideomonitoramento.all
   end
 
   # GET /demanda_videomonitoramentos/1
@@ -69,6 +76,6 @@ class DemandaVideomonitoramentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def demanda_videomonitoramento_params
-      params.require(:demanda_videomonitoramento).permit(:qtd_camera, :obj_videomonitoramento, :infra_monitoramento, :previsto_orcamento)
+      params.require(:demanda_videomonitoramento).permit(:orgao_id, :qtd_camera, :obj_videomonitoramento, :infra_monitoramento, :previsto_orcamento)
     end
 end

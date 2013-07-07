@@ -6,7 +6,14 @@ class InformacaoSitesController < ApplicationController
   # GET /informacao_sites
   # GET /informacao_sites.json
   def index
-    @informacao_sites = InformacaoSite.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @informacao_sites = InformacaoSite.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @informacao_sites = InformacaoSite.all
+    else
+      @informacao_sites = InformacaoSite.where(orgao_id: current_user.orgao_id)
+    end    
+    #@informacao_sites = InformacaoSite.all
   end
 
   # GET /informacao_sites/1

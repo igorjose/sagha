@@ -4,7 +4,14 @@ class ProjetosTiController < ApplicationController
   # GET /projetos_ti
   # GET /projetos_ti.json
   def index
-    @projetos_ti = ProjetoTi.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @projetos_ti = ProjetoTi.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @projetos_ti = ProjetoTi.all
+    else
+      @projetos_ti = ProjetoTi.where(orgao_id: current_user.orgao_id)
+    end    
+    #@projetos_ti = ProjetoTi.all
   end
 
   # GET /projetos_ti/1

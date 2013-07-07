@@ -4,7 +4,14 @@ class DesktopsController < ApplicationController
   # GET /desktops
   # GET /desktops.json
   def index
-    @desktops = Desktop.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @desktops = Desktop.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @desktops = Desktop.all
+    else
+      @desktops = Desktop.where(orgao_id: current_user.orgao_id)
+    end
+    #@desktops = Desktop.all
   end
 
   # GET /desktops/1

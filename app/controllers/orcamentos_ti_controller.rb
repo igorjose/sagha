@@ -6,7 +6,14 @@ class OrcamentosTiController < ApplicationController
   # GET /orcamentos_ti
   # GET /orcamentos_ti.json
   def index
-    @orcamentos_ti = OrcamentoTi.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @orcamentos_ti = OrcamentoTi.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @orcamentos_ti = OrcamentoTi.all
+    else
+      @orcamentos_ti = OrcamentoTi.where(orgao_id: current_user.orgao_id)
+    end    
+    #@orcamentos_ti = OrcamentoTi.all
   end
 
   # GET /orcamentos_ti/1

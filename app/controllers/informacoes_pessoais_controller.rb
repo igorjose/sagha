@@ -6,7 +6,14 @@ class InformacoesPessoaisController < ApplicationController
   # GET /informacoes_pessoais
   # GET /informacoes_pessoais.json
   def index
-    @informacoes_pessoais = InformacaoPessoal.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @informacoes_pessoais = InformacaoPessoal.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @informacoes_pessoais = InformacaoPessoal.all
+    else
+      @informacoes_pessoais = InformacaoPessoal.where(orgao_id: current_user.orgao_id)
+    end    
+    #@informacoes_pessoais = InformacaoPessoal.all
   end
 
   # GET /informacoes_pessoais/1

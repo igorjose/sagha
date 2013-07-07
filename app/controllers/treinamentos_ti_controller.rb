@@ -4,7 +4,14 @@ class TreinamentosTiController < ApplicationController
   # GET /treinamentos_ti
   # GET /treinamentos_ti.json
   def index
-    @treinamentos_ti = TreinamentoTi.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @treinamentos_ti = TreinamentoTi.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @treinamentos_ti = TreinamentoTi.all
+    else
+      @treinamentos_ti = TreinamentoTi.where(orgao_id: current_user.orgao_id)
+    end    
+    #@treinamentos_ti = TreinamentoTi.all
   end
 
   # GET /treinamentos_ti/1

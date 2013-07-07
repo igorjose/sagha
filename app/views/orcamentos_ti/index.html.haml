@@ -14,7 +14,7 @@
   %tbody
   - @orcamentos_ti.each do |orcamento_ti|
     %tr
-      %td= orcamento_ti.orgao.nome
+      %td= orcamento_ti.orgao
       %td= orcamento_ti.orcamento_ti
       %td
         = link_to orcamento_ti, :title => 'Visualizar' do

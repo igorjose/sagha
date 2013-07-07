@@ -4,7 +4,14 @@ class VideomonitoramentosController < ApplicationController
   # GET /videomonitoramentos
   # GET /videomonitoramentos.json
   def index
-    @videomonitoramentos = Videomonitoramento.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @videomonitoramentos = Videomonitoramento.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @videomonitoramentos = Videomonitoramento.all
+    else
+      @videomonitoramentos = Videomonitoramento.where(orgao_id: current_user.orgao_id)
+    end    
+    #@videomonitoramentos = Videomonitoramento.all
   end
 
   # GET /videomonitoramentos/1

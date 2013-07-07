@@ -4,7 +4,14 @@ class ServidoresController < ApplicationController
   # GET /servidores
   # GET /servidores.json
   def index
-    @servidores = Servidor.all
+    if !params[:orgao_id].blank? && current_user.admin
+      @servidores = Servidor.where(orgao_id: params[:orgao_id])
+    elsif current_user.admin
+      @servidores = Servidor.all
+    else
+      @servidores = Servidor.where(orgao_id: current_user.orgao_id)
+    end    
+    #@servidores = Servidor.all
   end
 
   # GET /servidores/1
@@ -69,6 +76,6 @@ class ServidoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def servidor_params
-      params.require(:servidor).permit(:modelo, :fabricante, :sistema_operacional, :arquitetura, :dominio, :processador, :ram, :hd, :hostname, :descricao, :servicos)
+      params.require(:servidor).permit(:orgao_id, :modelo, :fabricante, :sistema_operacional, :arquitetura, :dominio, :processador, :ram, :hd, :hostname, :descricao, :servicos)
     end
 end
