@@ -15,7 +15,7 @@
   %tbody
   - @orgao_sistemas_proprios.each do |orgao_sistema_proprio|
     %tr
-      %td= orgao_sistema_proprio.orgao.nome
+      %td= orgao_sistema_proprio.orgao.nome if orgao_sistema_proprio.orgao
       %td= orgao_sistema_proprio.nome
       %td= orgao_sistema_proprio.desenvolvedor
       %td
@@ -30,5 +30,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Novo sistema próprio', new_orgao_sistema_proprio_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Novo sistema próprio', new_orgao_sistema_proprio_path

@@ -15,7 +15,7 @@
   %tbody
   - @informacoes_pessoais.each do |informacao_pessoal|
     %tr
-      %td= informacao_pessoal.orgao.nome
+      %td= informacao_pessoal.orgao.nome if informacao_pessoal.orgao
       %td= informacao_pessoal.cargo.nome
       %td= informacao_pessoal.nome
       %td
@@ -30,5 +30,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Nova Informação pessoal', new_informacao_pessoal_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Nova Informação pessoal', new_informacao_pessoal_path

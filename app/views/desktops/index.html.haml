@@ -15,7 +15,7 @@
   %tbody
   - @desktops.each do |desktop|
     %tr
-      %tb= desktop.orgao.nome
+      %td= desktop.orgao.nome if desktop.orgao
       %td= desktop.qtd_funcionando
       %td= desktop.qtd_extra
       %td
@@ -30,5 +30,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Novo Desktop', new_desktop_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Novo Desktop', new_desktop_path

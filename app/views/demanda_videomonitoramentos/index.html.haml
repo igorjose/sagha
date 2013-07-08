@@ -15,7 +15,7 @@
   %tbody
   - @demanda_videomonitoramentos.each do |demanda_videomonitoramento|
     %tr
-      %td= demanda_videomonitoramento.orgao.nome
+      %td= demanda_videomonitoramento.orgao.nome if demanda_videomonitoramento.orgao
       %td= demanda_videomonitoramento.qtd_camera
       %td= demanda_videomonitoramento.obj_videomonitoramento
       %td
@@ -30,5 +30,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Nova Demanda videomonitoramento', new_demanda_videomonitoramento_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Nova Demanda videomonitoramento', new_demanda_videomonitoramento_path

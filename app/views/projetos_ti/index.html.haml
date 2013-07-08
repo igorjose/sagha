@@ -15,7 +15,7 @@
   %tbody
   - @projetos_ti.each do |projeto_ti|
     %tr
-      %td= projeto_ti.orgao.nome
+      %td= projeto_ti.orgao.nome if projeto_ti.orgao
       %td= projeto_ti.nome_projeto
       %td= projeto_ti.gerente_projeto
       %td
@@ -30,5 +30,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Novo projeto de TI', new_projeto_ti_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Novo projeto de TI', new_projeto_ti_path

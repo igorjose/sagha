@@ -15,7 +15,7 @@
   %tbody
   - @orgao_sistemas.each do |orgao_sistema|
     %tr
-      %td= orgao_sistema.orgao.nome
+      %td= orgao_sistema.orgao.nome if orgao_sistema.orgao
       %td= orgao_sistema.sistema.nome
       %td= orgao_sistema.nivel_implantacao
       %td
@@ -30,5 +30,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Cadastrar novo', new_orgao_sistema_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Cadastrar novo', new_orgao_sistema_path

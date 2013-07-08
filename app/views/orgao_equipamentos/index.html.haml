@@ -16,7 +16,7 @@
   %tbody
   - @orgao_equipamentos.each do |orgao_equipamento|
     %tr
-      %td= orgao_equipamento.orgao.nome
+      %td= orgao_equipamento.orgao.nome if orgao_equipamento.orgao
       %td= orgao_equipamento.equipamento.nome
       %td= orgao_equipamento.qtd_funcionando
       %td= orgao_equipamento.qtd_defeito
@@ -32,5 +32,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Criar novo', new_orgao_equipamento_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Criar novo', new_orgao_equipamento_path

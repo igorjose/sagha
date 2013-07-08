@@ -4,13 +4,13 @@
   .inputs
     %div{style: "display: block;"}
       - if current_user.admin
-        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id
+        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin flat-select', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id
       - else
-        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id, disabled: true
+        = f.input :orgao_id, as: :hidden, input_html: {value: current_user.orgao_id}
     = f.input :modelo, input_html: { class: 'span6' }
     = f.input :fabricante, input_html: { class: 'span6' }
     = f.input :sistema_operacional, input_html: { class: 'span6' }
-    = f.input :arquitetura, input_html: { class: 'span6' }, as: :select, collection: ['32 bits', '64 bits'], input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}
+    = f.input :arquitetura, input_html: { class: 'span6' }, as: :select, collection: ['32 bits', '64 bits'], input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}, prompt: "Selecione uma opção"
     = f.input :dominio, input_html: { class: 'span6' }, label: "Domínio"
     = f.input :processador, input_html: { class: 'span6' }
     = f.input :ram, input_html: { class: 'span6' }, label: "Memória RAM"

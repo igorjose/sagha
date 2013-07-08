@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130626153843) do
+ActiveRecord::Schema.define(version: 20130708160753) do
 
   create_table "cargos", force: true do |t|
     t.string   "nome"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20130626153843) do
     t.boolean  "previsto_orcamento"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   create_table "desktops", force: true do |t|
@@ -268,6 +269,7 @@ ActiveRecord::Schema.define(version: 20130626153843) do
     t.integer  "qtd_pessoa"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orgao_id"
   end
 
   create_table "users", force: true do |t|

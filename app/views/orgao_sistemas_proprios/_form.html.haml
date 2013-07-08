@@ -4,9 +4,9 @@
   .inputs
     %div{style: "display: block;"}
       - if current_user.admin
-        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id
+        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin flat-select', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id
       - else
-        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id, disabled: true
+        = f.input :orgao_id, as: :hidden, input_html: {value: current_user.orgao_id}
     = f.input :nome, input_html: { class: 'span6' }, label: "Nome do sistema"
     = f.input :descricao, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: "Descrição", placeholder: "Descrição do sistema"
     = f.input :desenvolvedor, input_html: { class: 'span6' }

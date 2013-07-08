@@ -2,6 +2,11 @@
   = f.error_notification
 
   .inputs
+    %div{style: "display: block;"}
+      - if current_user.admin
+        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin flat-select', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id
+      - else
+        = f.input :orgao_id, as: :hidden, input_html: {value: current_user.orgao_id} 
     = f.input :qtd_camera, label: 'Quantidade de câmeras', input_html: { class: 'span6' }
     = f.input :obj_videomonitoramento, label: 'Objetivo do videomonitoramento', input_html: { class: 'span6' }
     = f.input :infra_monitoramento, label: 'Infraestrutura da Sala de monitoramento', input_html: { class: 'span6' }

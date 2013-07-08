@@ -15,7 +15,7 @@
   %tbody
   - @servidores.each do |servidor|
     %tr
-      %td= servidor.orgao.nome
+      %td= servidor.orgao.nome if servidor.orgao
       %td= servidor.modelo
       %td= servidor.fabricante
       %td
@@ -30,5 +30,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Novo Servidor', new_servidor_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Novo Servidor', new_servidor_path

@@ -4,11 +4,11 @@
   .inputs
     %div{style: "display: block;"}
       - if current_user.admin
-        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id
+        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin flat-select', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id
       - else
-        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: 'Órgão', selected: current_user.orgao_id, disabled: true
+        = f.input :orgao_id, as: :hidden, input_html: {value: current_user.orgao_id}
     %div{style: "display: block;"}
-      = f.association :equipamento, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}
+      = f.association :equipamento, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, prompt: "Selecione uma opção"
     = f.input :qtd_funcionando, input_html: { class: 'span6' }, label: 'Quantidade funcionando'
     = f.input :qtd_defeito, input_html: { class: 'span6' }, label: 'Quantidade com defeito'
     = f.input :descricao_defeito, :input_html => {:rows => 4, :cols => 25, :class => 'input-textarea'}, label: 'Descrição dos equipamentos com defeito', placeholder: "Descreva o defeito dos equipamentos"

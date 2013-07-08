@@ -28,5 +28,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Novo orçamento de TI', new_orcamento_ti_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Novo orçamento de TI', new_orcamento_ti_path

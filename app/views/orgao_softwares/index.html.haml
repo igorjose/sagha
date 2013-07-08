@@ -30,5 +30,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Cadastrar', new_orgao_software_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Cadastrar', new_orgao_software_path

@@ -23,5 +23,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Novo Equipamento', new_equipamento_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Novo Equipamento', new_equipamento_path

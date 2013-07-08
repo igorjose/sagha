@@ -17,6 +17,8 @@
               - if user_signed_in?
                 Bem vindo,
                 = current_user.email
+                - if current_user.admin
+                  = link_to 'Cadastrar usuário', new_user_registration_path
                 = link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link'
                 = link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'
 
@@ -37,33 +39,33 @@
                       - else
                         = link_to 'Desktops', new_desktop_path
                     %li
-                      = link_to 'Softwares Utilizados', orgao_softwares_path
-                    %li
                       = link_to 'Equipamentos Utilizados', orgao_equipamentos_path
-                    %li
-                      = link_to 'Sistemas Utilizados', orgao_sistemas_path
                     %li
                       = link_to 'Impressoras', orgao_impressoras_path
                     %li
-                      = link_to 'Informações pessoais', informacoes_pessoais_path
+                      = link_to 'Informações Pessoais', informacoes_pessoais_path
+                    %li
+                      = link_to 'Informações sobre Site', informacao_sites_path                    
+                    %li
+                      = link_to 'Informações sobre o GED', informacoes_ged_path                                        
+                    %li
+                      = link_to 'Orçamentos de TI', orcamentos_ti_path                    
+                    %li
+                      = link_to 'Outras Informações', outras_informacoes_path                    
+                    %li
+                      = link_to 'Projetos de TI', projetos_ti_path                    
                     %li
                       = link_to 'Servidores', servidores_path
                     %li
-                      = link_to 'Sistemas próprios', orgao_sistemas_proprios_path
+                      = link_to 'Sistemas Próprios', orgao_sistemas_proprios_path
                     %li
-                      = link_to 'Informações sobre o GED', informacoes_ged_path
+                      = link_to 'Sistemas Utilizados', orgao_sistemas_path                    
                     %li
-                      = link_to 'Projetos de TI', projetos_ti_path
-                    %li
-                      = link_to 'Orçamentos de TI', orcamentos_ti_path
+                      = link_to 'Softwares Utilizados', orgao_softwares_path
                     %li
                       = link_to 'Treinamentos de TI', treinamentos_ti_path  
                     %li
-                      = link_to 'Informações sobre site', informacao_sites_path
-                    %li
-                      = link_to 'Videomonitoramentos', videomonitoramentos_path
-                    %li
-                      = link_to 'Outras informações', outras_informacoes_path                      
+                      = link_to 'Videomonitoramentos', videomonitoramentos_path                     
                 %li
                   = link_to 'Demanda', '#'
                   %ul

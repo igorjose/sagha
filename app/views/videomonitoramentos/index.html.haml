@@ -15,7 +15,7 @@
   %tbody
   - @videomonitoramentos.each do |videomonitoramento|
     %tr
-      %td= videomonitoramento.orgao.nome
+      %td= videomonitoramento.orgao.nome if videomonitoramento.orgao
       %td= videomonitoramento.possui_cameras
       %td= videomonitoramento.pertencente_a
       %td
@@ -30,5 +30,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Novo Videomonitoramento', new_videomonitoramento_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Novo Videomonitoramento', new_videomonitoramento_path

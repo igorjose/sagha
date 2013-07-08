@@ -15,7 +15,7 @@
   %tbody
   - @treinamentos_ti.each do |treinamento_ti|
     %tr
-      %td= treinamento_ti.orgao.nome
+      %td= treinamento_ti.orgao.nome if treinamento_ti.orgao
       %td= treinamento_ti.treinamento
       %td= treinamento_ti.qtd_pessoa
       %td
@@ -30,5 +30,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Novo Treinamento de TI', new_treinamento_ti_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Novo Treinamento de TI', new_treinamento_ti_path

@@ -16,7 +16,7 @@
   %tbody
   - @orgao_impressoras.each do |orgao_impressora|
     %tr
-      %td= orgao_impressora.orgao.nome
+      %td= orgao_impressora.orgao.nome if orgao_impressora.orgao
       %td= orgao_impressora.tipo
       %td= orgao_impressora.funcionando
       %td= orgao_impressora.defeituosas
@@ -32,5 +32,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Novo registro', new_orgao_impressora_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Novo registro', new_orgao_impressora_path

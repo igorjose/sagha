@@ -4,13 +4,13 @@
   .inputs
     %div{style: "display: block;"}
       - if current_user.admin
-        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: "Órgão", selected: current_user.orgao_id
+        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin flat-select', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: "Órgão", selected: current_user.orgao_id
       - else
-        = f.association :orgao, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, label: "Órgão", selected: current_user.orgao_id, disabled: true
+        = f.input :orgao_id, as: :hidden, input_html: {value: current_user.orgao_id}
     %div{style: "display: block;"}
-      = f.association :sistema, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}
+      = f.association :sistema, :required => true, input_html: {class: 'span6 no-margin', style: "display: block;"}, label_method: :nome, label_html: {style: "display: block;"}, prompt: "Selecione uma opção"
     %div{style: "display: block;"}
-      = f.input :nivel_implantacao, as: :select, collection: ['Implantado', 'Em fase de implantação', 'Não implantado'], input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}, label: "Nível de implantação"
+      = f.input :nivel_implantacao, as: :select, collection: ['Implantado', 'Em fase de implantação', 'Não implantado'], input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}, label: "Nível de implantação", prompt: "Selecione uma opção"
     = f.input :qtd_consulta, input_html: { class: 'span6' }, label: 'Quantidade de pessoas que acessam o sistema apenas para consulta'
     = f.input :qtd_cadastro, input_html: { class: 'span6' }, label: 'Quantidade de pessoas que acessam o sistema fazendo cadastros/alterações'
 

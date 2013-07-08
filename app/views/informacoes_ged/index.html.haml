@@ -15,7 +15,7 @@
   %tbody
   - @informacoes_ged.each do |informacao_ged|
     %tr
-      %td= informacao_ged.orgao.nome
+      %td= informacao_ged.orgao.nome if informacao_ged.orgao
       %td= informacao_ged.processo_digitalizacao
       %td= informacao_ged.numero_digitalizacao
       %td
@@ -30,5 +30,6 @@
 
 %br
 
-.btn.btn-small.btn-inverse
-  = link_to 'Nova Informação GED', new_informacao_ged_path
+- if not current_user.admin
+  .btn.btn-small.btn-inverse
+    = link_to 'Nova Informação GED', new_informacao_ged_path
