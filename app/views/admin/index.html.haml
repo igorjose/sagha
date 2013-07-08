@@ -1,0 +1,23 @@
+%h1 Listar usuários cadastrados
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Email
+      %th
+      %th
+  %tbody
+  - @users.each do |user|
+    %tr
+      %td= user.email
+      %td
+        = link_to edit_admin_path(user), :title => 'Editar' do
+          %span.fui-new{:class => 'icons24'}
+      %td 
+        = link_to admin_path(user), :method => :delete, :title => 'Excluir', :data => { :confirm => 'Você tem certeza?' } do
+          %span.fui-cross{:class => 'icons24'}
+
+%br
+
+.btn.btn-small.btn-inverse
+  = link_to 'Novo usuário', add_user_admin_index_path

@@ -17,8 +17,6 @@
               - if user_signed_in?
                 Bem vindo,
                 = current_user.email
-                - if current_user.admin
-                  = link_to 'Cadastrar usuário', new_user_registration_path
                 = link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link'
                 = link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'
 
@@ -85,6 +83,8 @@
                         = link_to 'Sistemas', sistemas_path                      
                       %li
                         = link_to 'Softwares', softwares_path
+                      %li
+                        = link_to 'Usuários', admin_index_path
 
     .container
 

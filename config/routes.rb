@@ -41,6 +41,12 @@ Sagha::Application.routes.draw do
 
   devise_for :users
 
+  resources :admin do
+    collection do
+      get 'add_user'
+    end
+  end
+
   root :to => "home#index"
 
   get 'inicial', to: 'home#index', as: :index
