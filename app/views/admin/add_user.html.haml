@@ -4,10 +4,16 @@
   .form-inputs
     = f.input :email, :required => true, :autofocus => true, input_html: { class: 'span6' }
 
-    = f.association :orgao, :required => true, input_html: {class: 'select-block'}, label_method: :nome, :label => "Órgão", input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}
+    = f.association :orgao, :required => true, input_html: {class: 'select-block'}, label_method: :nome, :label => "Órgão", input_html: {class: 'span6 no-margin', style: "display: block;"}, label_html: {style: "display: block;"}, prompt: "Selecione uma opção"
     = f.input :password, :required => true, :label => "Senha", input_html: { class: 'span6' }
 
     = f.input :password_confirmation, :required => true, :label => "Confirme sua senha", input_html: { class: 'span6' }
+
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.input :admin, :label => "Administrador do sistema?"  
 
   .form-actions
     = f.button :submit, "Cadastrar", class: 'btn btn-success'

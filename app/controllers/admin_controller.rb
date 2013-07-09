@@ -3,9 +3,9 @@
 class AdminController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  def set_user
-    @user = User.find params[:id]
-  end
+  #def set_user
+  #  @user = User.find params[:id]
+  #end
 
   def index
     @users = User.all
@@ -57,7 +57,7 @@ class AdminController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_orgao
+    def set_user
       @user = User.find(params[:id])
     end
 

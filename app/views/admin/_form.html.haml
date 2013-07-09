@@ -1,0 +1,16 @@
+= simple_form_for(edit_admin_path) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :email, :required => true, :autofocus => true, input_html: { class: 'span6' }
+    
+    = f.input :password, :required => true, :label => "Senha", input_html: { class: 'span6' }
+    = f.input :password_confirmation, :required => true, :label => "Confirme sua senha", input_html: { class: 'span6' }
+    %label.checkbox
+      %span.icons
+        %span.first-icon.fui-checkbox-unchecked
+        %span.second-icon.fui-checkbox-checked
+      = f.input :admin, :label => "Administrador do sistema?", :required => false
+  
+  .actions
+    = f.button :submit, class: 'btn btn-success', value: 'Cadastrar Usuário'
