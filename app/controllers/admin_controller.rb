@@ -19,6 +19,7 @@ class AdminController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def create
@@ -38,7 +39,7 @@ class AdminController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'Órgão atualizado com sucesso!' }
+        format.html { redirect_to admin_path, notice: 'Usuário atualizado com sucesso!' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

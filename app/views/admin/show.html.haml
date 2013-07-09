@@ -1,0 +1,24 @@
+%p.alert.alert-success= notice
+
+%h1 Visualizar usuário selecionado
+
+%table.table.table-hover
+  %tr
+    %td
+      %b Email:
+    %td
+      = @user.email
+  %tr
+    %td
+      %b Órgão:
+    %td
+      = @user.orgao.nome
+  %tr
+    %td
+      %b É administrador?
+    %td
+      = @user.admin      
+%br      
+
+.btn.btn-small.btn-inverse
+  = link_to 'Voltar', admin_index_path
