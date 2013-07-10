@@ -6,6 +6,7 @@ gem 'haml-rails'
 gem 'unicorn-rails'
 gem 'simple_form'
 gem 'devise', '~> 3.0.0.rc'
+gem 'pg'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
