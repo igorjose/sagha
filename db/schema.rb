@@ -13,6 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20130708160753) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "adminpack"
+  enable_extension "tablefunc"
+  enable_extension "hstore"
+
   create_table "cargos", force: true do |t|
     t.string   "nome"
     t.datetime "created_at"
@@ -139,7 +145,7 @@ ActiveRecord::Schema.define(version: 20130708160753) do
     t.datetime "updated_at"
   end
 
-  add_index "orgao_impressoras", ["orgao_id", "tipo"], name: "index_orgao_impressoras_on_orgao_id_and_tipo", unique: true
+  add_index "orgao_impressoras", ["orgao_id", "tipo"], name: "index_orgao_impressoras_on_orgao_id_and_tipo", unique: true, using: :btree
 
   create_table "orgao_sistemas", force: true do |t|
     t.integer  "orgao_id"
@@ -289,8 +295,8 @@ ActiveRecord::Schema.define(version: 20130708160753) do
     t.boolean  "admin",                  default: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "videomonitoramentos", force: true do |t|
     t.boolean  "possui_cameras"

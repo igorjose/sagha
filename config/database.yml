@@ -21,12 +21,12 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: sagha
+  database: pmf_desv
   port: 5432
   pool: 5
-  host: 127.0.0.1
+  host: 172.31.4.2
   username: sagha
-  password: sagha1234
+  password: sagha
 
 proddb:
   adapter: postgresql
